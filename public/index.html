@@ -37,23 +37,27 @@
    }
    
    summary {
-    cursor: pointer;
     box-shadow: 0 0 2px white;
     padding: 20px;
    }
    
-   p:hover, h1:hover, details *:hover {
+   aside {
+    float: right;
+   }
+   
+   aside:hover, p:hover, h1:hover, details *:hover {
     background-color: #030303;
     text-shadow: 0 0 2px #772;
    }
    
-   a {
+   a, [onclick], summary {
+    cursor: pointer;
     color: inherit;
     text-decoration: none;
     position: relative;
    }
    
-   a::after {
+   a::after, [onclick]::after {
     position: absolute;
     top: 100%;
     left: 0;
@@ -67,7 +71,7 @@
     transition: height 0.1s ease;
    }
    
-   a:hover::after {
+   a:hover::after [onclick]:hover::after {
     box-shadow: 0 0 20px #772;
     height: 8px;
    }
@@ -84,7 +88,12 @@
 <body>
  <h1>Nathanael 'Nate' Ferrero</h1>
  <article>
-  <p>You are at <a id="self"></a></p>
+  <p>
+   <aside
+    onclick="for (const d of Array.from(document.getElementsByTagName('summary'))) { d.click() }"
+   >toggle all</aside>
+   You are at <a id="self"></a>
+  </p>
  </article>
  <details>
   <summary>timeline</summary>
