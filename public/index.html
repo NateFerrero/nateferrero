@@ -93,11 +93,24 @@
    h1, article {
     margin: 20px 0;
    }
+   
+   [revealonhover] {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+   }
+   
+   *:hover + [revealonhover] {
+    opacity: 1;
+   }
  </style>
 </head>
 <body>
  <h1>Nathanael 'Nate' Ferrero</h1>
- <p>Software engineer in the United States</p>
+ <p>Software engineer in the <a target="_blank" href="https://en.wikipedia.org/wiki/United_States">United States</a>
+  <span revealonhover>
+   MI ▹ NC ▹ CO ▹ CA ▹ MI ▹ WA ▹ MT ▹ NY ▹ VT ▹ CT ▹ MI
+  </span>
+ </p>
  <article>
   <p>
    <aside
