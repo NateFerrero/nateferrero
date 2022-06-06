@@ -10,7 +10,7 @@
      margin: 0;
      overflow-x: hidden;
      overflow-y: auto;
-     margin: 180px 120px;
+     margin: 15vh 15vw;
    }
 
    @font-face {
@@ -37,7 +37,7 @@
    }
    
    summary {
-    box-shadow: 0 0 2px white;
+    box-shadow: 0 0 2px #232323;
     padding: 20px;
    }
    
@@ -60,6 +60,7 @@
    button {
     border: none;
     background-color: #232323;
+    padding: 4px 8px;
    }
    
    details button:hover {
@@ -83,15 +84,15 @@
    
    a:hover::after, [onclick]:hover::after, button:hover::after {
     box-shadow: 0 0 20px #772;
-    height: 8px;
+    height: 4px;
    }
    
    span {
     color: #664;
    }
    
-   h1, article {
-    margin: 20px 0;
+   h1, article, p {
+    margin: 25px 0;
    }
    
    [revealonhover] {
@@ -106,7 +107,7 @@
 </head>
 <body>
  <h1>Nathanael 'Nate' Ferrero</h1>
- <p>Software engineer in the <a target="_blank" href="https://en.wikipedia.org/wiki/United_States">United States</a>
+ <p>software engineer in the <a target="_blank" href="https://en.wikipedia.org/wiki/United_States">United States</a>
   <span revealonhover>
    MI ▹ NC ▹ CO ▹ CA ▹ MI ▹ WA ▹ MT ▹ NY ▹ VT ▹ CT ▹ MI
   </span>
@@ -116,24 +117,24 @@
    <aside
     onclick="for (const d of Array.from(document.getElementsByTagName('summary'))) { d.click() }"
    >toggle all</aside>
-   You are at <a id="self"></a>
+   you are at <a id="self"></a>
   </p>
  </article>
  <details>
   <summary>timeline</summary>
-  <p>A summary of my path so far...</p>
+  <p>a summary of my path so far...</p>
  </details>
  <details>
   <summary>vision</summary>
-  <p>My vision is that...</p>
+  <p>my vision is that...</p>
  </details>
  <details>
   <summary>mission</summary>
-  <p>My mission is to...</p>
+  <p>my mission is to...</p>
  </details>
  <details>
   <summary>projects</summary>
-  <p>I am working on...</p>
+  <p>i am working on...</p>
  </details>
  <details>
   <summary>contact</summary>
@@ -157,7 +158,7 @@
   
   function goodbye() {
    document.getElementById('contact').innerHTML = `
-    <p><button onclick="contact()">prove that you are human</button></p>
+    <p><button onclick="contact()">press here if you are human</button></p>
    `
   }
   
