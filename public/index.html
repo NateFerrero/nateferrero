@@ -45,19 +45,29 @@
     float: right;
    }
    
-   aside:hover, p:hover, h1:hover, details *:hover {
+   aside:hover, p:hover, h1:hover, details *:not(div):hover {
     background-color: #030303;
     text-shadow: 0 0 2px #772;
    }
    
-   a, [onclick], summary {
+   a, [onclick], summary, button {
     cursor: pointer;
     color: inherit;
     text-decoration: none;
     position: relative;
    }
    
-   a::after, [onclick]::after {
+   button {
+    border: none;
+    background-color: #232323;
+   }
+   
+   details button:hover {
+    background-color: #323232;
+    color: white;
+   }
+   
+   a::after, [onclick]::after, button::after {
     position: absolute;
     top: 100%;
     left: 0;
@@ -71,7 +81,7 @@
     transition: height 0.1s ease;
    }
    
-   a:hover::after [onclick]:hover::after {
+   a:hover::after, [onclick]:hover::after, button:hover::after {
     box-shadow: 0 0 20px #772;
     height: 8px;
    }
@@ -87,6 +97,7 @@
 </head>
 <body>
  <h1>Nathanael 'Nate' Ferrero</h1>
+ <p>Software engineer in the United States</p>
  <article>
   <p>
    <aside
@@ -113,15 +124,30 @@
  </details>
  <details>
   <summary>contact</summary>
-  <p>i may be reached by text message (preferred) or phone call at +1 (323) 283-9179</p>
-  <p>for questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a> or <a target="_blank" href="https://astory.app">https://astory.app</a> please email nate<span>@</span>tagme.in</p>
-  <p>for all other inquiries, hello<span>@</span>nateferrero.com will do</p>
-  <p>until we meet again</p>
+  <div id="contact">
+  </div>
  </details>
  <script>
   const self = document.getElementById('self')
   const address = window.location.href
   self.setAttribute('href', address)
   self.innerText = address
+  
+  function contact() {
+   document.getElementById('contact').innerHTML = `
+    <p>i may be reached by text message (preferred) or phone call at +1 (323) 283-9179</p>
+    <p>for questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a> or <a target="_blank" href="https://astory.app">https://astory.app</a> please email nate<span>@</span>tagme.in</p>
+    <p>for all other inquiries, hello<span>@</span>nateferrero.com will do</p>
+    <button onclick="goodbye()">until we meet again</button>
+   `
+  }
+  
+  function goodbye() {
+   document.getElementById('contact').innerHTML = `
+    <p><button onclick="contact()">prove that you are human</button></p>
+   `
+  }
+  
+  goodbye()
  </script>
 </body>
