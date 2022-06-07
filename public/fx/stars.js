@@ -11,6 +11,7 @@ function space(canvas) {
   right: 0,
   bottom: 0,
   zIndex: 0,
+  opacity: 0.5
  })
  document.body.appendChild(spaceCanvas)
  return spaceCanvas.getContext('2d')
@@ -19,9 +20,10 @@ function space(canvas) {
 window.spaceLayer = space()
 
 function stars() {
+
  const { innerWidth: width, innerHeight: height } = window
  window.spaceLayer.fillStyle = '#f9f9e006'
-
+ window.spaceLayer.clearRect(0, 0, width, height)
  for (const id in new Array(1e5).fill()) {
   const size = (( id * id ) % 4 ) + 1
   const x = (12309814230987 * id) % width - size
@@ -31,4 +33,5 @@ function stars() {
 }
 
 stars()
+window.addEventListener('resize', stars)
 
