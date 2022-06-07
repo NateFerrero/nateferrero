@@ -20,13 +20,12 @@ window.spaceLayer = space()
 
 function stars() {
  const { innerWidth: width, innerHeight: height } = window
- window.spaceLayer.fillStyle = '#f9f9e024'
+ window.spaceLayer.fillStyle = '#f9f9e006'
 
- for (const id in new Array(3e2).fill()) {
-  const size = (( id * id ) % 16 ) / 8 + 1
-  // 12309814230987
-  const x = (7654321 * id + 3456789 * id * id) % width - size
-  const y = 2468 * id % height - size
+ for (const id in new Array(1e5).fill()) {
+  const size = (( id * id ) % 4 ) + 1
+  const x = (12309814230987 * id) % width - size
+  const y = 12309814230987 * id % height - size
   window.spaceLayer.fillRect(x, y, size * 2, size * 2)
  }
 }
