@@ -1,129 +1,7 @@
 <!doctype html>
 <head>
  <title>Nate Ferrero</title>
- <style>
-   body {
-     background-color: black;
-     color: #ab6;
-     box-sizing: border-box;
-     display: flex;
-     flex-direction: column;
-     margin: 0;
-     overflow-x: hidden;
-     overflow-y: auto;
-     margin: 10vh 10vw;
-   }
-
-   @font-face {
-     font-family: 'Berkeley Mono';
-     src: url('./berkeleygraphics/berkeley-mono-variable/BerkeleyMonoVariable-Regular.woff2') format('woff2'),
-       url('./berkeleygraphics/berkeley-mono-variable/BerkeleyMonoVariable-Regular.woff') format('woff');
-   }
-
-   body, select, button, input, textarea {
-     font-family: 'Berkeley Mono', monospace;
-     font-size: 18px;
-     letter-spacing: 0.35px;
-     line-height: 1.35;
-     font-variation-settings: 'wght' 0;
-   }
-
-   *::selection, *::-webkit-selection {
-     background: #cc8 !important;
-     color: black !important;
-   }
-   
-   details {
-    margin-bottom: 2px;
-   }
-   
-   details + article {
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: height 0.5s ease-out, opacity 2.5s ease-out;
-   }
-   
-   details[open] + article {
-    height: 240px;
-    opacity: 1;
-   }
-   
-   details, h1, p {
-    border-radius: 4px;
-   }
-   
-   summary {
-    box-shadow: 0 0 2px #545454;
-    padding: 20px;
-   }
-   
-   action {
-    float: right;
-    position: relative;
-   }
-   
-   action:hover, p:hover, h1:hover, details *:not(div):hover {
-    background-color: #080808;
-    text-shadow: 0 0 2px #994;
-   }
-   
-   a, [onclick], summary, button {
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-    position: relative;
-    white-space: nowrap;
-   }
-   
-   button {
-    border: none;
-    background-color: #232323;
-    padding: 4px 8px;
-   }
-   
-   details button:hover {
-    background-color: #323232;
-    color: white;
-   }
-   
-   a::after, [onclick]::after, button::after {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 1.85px;
-    margin-top: 2px;
-    background-color: #ab6;
-    border-radius: 2px;
-    content: '';
-    display: block;
-    transition: height 0.1s ease;
-    pointer-events: none;
-   }
-   
-   a:hover::after, [onclick]:hover::after, button:hover::after {
-    box-shadow: 0 0 20px #772;
-    height: 4px;
-   }
-   
-   span {
-    color: #607050;
-   }
-   
-   h1, p {
-    margin: 25px 0;
-   }
-   
-   [revealonhover] {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-   }
-   
-   *:hover + [revealonhover] {
-    opacity: 1;
-   }
- </style>
+ <link rel="stylesheet" type="text/css" href="./main.css"/>
 </head>
 <body>
  <h1>Nathanael 'Nate' Ferrero</h1>
@@ -145,24 +23,63 @@
  </details>
  <article>
    <p>a summary of my path so far...</p>
+   <ul>
+    <li>2004 - 2005 Grand Rapids Community College</li>
+    <li>2005 - 2007 Grand Valley State University</li>
+    <li>2008 - 2010 Akatswiri Computers and Electronics</li>
+    <li>2010 - 2012 Momentum OS, Inc.</li>
+    <li>2012 - 2013 GraphEffect (a.k.a. Shift)</li>
+    <li>2013 - 2015 Gaikai</li>
+    <li>2015 - 2017 TD Ameritrade</li>
+    <li>2017        Outreach</li>
+    <li>2018 - 2019 Tinybeans</li>
+    <li>2018 -      TagMeIn, LLC</li>
+    <li>2018 -      Flatfile Inc.</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+   </ul>
  </article>
  <details>
   <summary>vision</summary>
  </details>
  <article>
-   <p>my vision is that...</p>
+   <h3>vision statement</h3>
+   <blockquote>“Our task is to make nature, the blind force of nature, into an instrument of universal resuscitation and to become a union of immortal beings.” ― <a target="_blank" href="https://transhumanism.fandom.com/wiki/Nikolai_Fyodorovich_Fyodorov">Nikolai F. Fyodorov</a></blockquote>
+  <h3>why is this my vision?</h3>
+   <p>i chose this quote as my personal vision statement because I believe that a vision statement should represent the best possible future that oneself could possibly imagine</p>
  </article>
  <details>
   <summary>mission</summary>
  </details>
  <article>
-   <p>my mission is to...</p>
+   <h3>mission statement</h3>
+  <blockquote>To possess deep understanding of <a target="_blank" href="https://kk.org/thetechnium/">The Technium</a>, and identify improvements to be made that cause positive impact on an individual, society, or the world.</blockquote>
+  <h3>why is this my mission?</h3>
+  <p>because as a mammal i have a limited lifespan, patches of code i contribute will outlive me</p>
  </article>
  <details>
   <summary>projects</summary>
  </details>
  <article>
    <p>i am working on...</p>
+   <ul>
+    <li><a target="_blank" href="https://astory.app/">Astory</a> - an integrated development environment for authoring complete websites with HTML, CSS, and JavaScript</li>
+    <li><a target="_blank" href="https://readablescript.com/">ReadableScript</a> - a dialect of JavaScript optimized for low visual complexity</li>
+    <li><a target="_blank" href="https://tagme.in/">TagMeIn</a> - a social network for software developers</li>
+   </ul>
  </article>
  <details>
   <summary>contact</summary>
@@ -192,4 +109,5 @@
   goodbye()
  </script>
  <script src="./fx/stars.js"></script>
+ <script src="./util/rememberDetailsOpen.js"></script>
 </body>
