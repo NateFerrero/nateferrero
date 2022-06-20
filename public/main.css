@@ -7,7 +7,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 10vh 10vw;
+  margin: 20vh 5vw;
 }
 
 @font-face {
@@ -18,7 +18,7 @@ body {
 
 body, select, button, input, textarea {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 18px;
+  font-size: 24px;
   letter-spacing: 0.35px;
   line-height: 1.5;
   font-variation-settings: 'wght' 0;
