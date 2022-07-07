@@ -4,8 +4,8 @@
  <link rel="stylesheet" type="text/css" href="./main.css"/>
 </head>
 <body>
- <h1>Nathanael 'Nate' Ferrero</h1>
- <p>software engineer in the <a target="_blank" href="https://en.wikipedia.org/wiki/United_States">United States</a>
+ <h1>Nate Ferrero</h1>
+ <p>Software engineer in the <a target="_blank" href="https://en.wikipedia.org/wiki/United_States">United States</a>
   <span revealonhover>
    MI ▹ NC ▹ CO ▹ CA ▹ MI ▹ WA ▹ MT ▹ NY ▹ VT ▹ CT ▹ MI
   </span>
@@ -14,15 +14,15 @@
   <p>
    <action
     onclick="for (const d of Array.from(document.getElementsByTagName('summary'))) { d.click() }"
-   >toggle all</action>
-   you are at <a id="self"></a>
+   >Toggle all</action>
+   You are at <a id="self"></a>
   </p>
  </article>
  <details>
-  <summary>timeline</summary>
+  <summary>Timeline</summary>
  </details>
  <article>
-   <p>a summary of my path so far...</p>
+   <p>A summary of my path so far...</p>
    <ul>
     <li>2004 - 2005 Grand Rapids Community College</li>
     <li>2005 - 2007 Grand Valley State University</li>
@@ -53,37 +53,38 @@
    </ul>
  </article>
  <details>
-  <summary>vision</summary>
+  <summary>Vision</summary>
  </details>
  <article>
-   <h3>vision statement</h3>
+   <h3>Vision statement</h3>
    <blockquote>“Our task is to make nature, the blind force of nature, into an instrument of universal resuscitation and to become a union of immortal beings.” ― <a target="_blank" href="https://transhumanism.fandom.com/wiki/Nikolai_Fyodorovich_Fyodorov">Nikolai F. Fyodorov</a></blockquote>
-  <h3>why is this my vision?</h3>
-   <p>i chose this quote as my personal vision statement because I believe that a vision statement should represent the best possible future that oneself could possibly imagine</p>
+  <h6>Why is this my vision?</h6>
+   <p>Because it is the best imaginable future.</p>
  </article>
  <details>
-  <summary>mission</summary>
+  <summary>Mission</summary>
  </details>
  <article>
-   <h3>mission statement</h3>
+   <h3>Mission statement</h3>
   <blockquote>To possess deep understanding of <a target="_blank" href="https://kk.org/thetechnium/">The Technium</a>, and identify improvements to be made that cause positive impact on an individual, society, or the world.</blockquote>
-  <h3>why is this my mission?</h3>
-  <p>because as a mammal i have a limited lifespan, patches of code i contribute will outlive me</p>
+  <h6>Why is this my mission?</h6>
+  <p>Because as a mammal, I have a limited lifespan. Patches of code I contribute to the Technium will outlive me.</p>
  </article>
  <details>
-  <summary>projects</summary>
+  <summary>Projects</summary>
  </details>
  <article>
-   <p>i am working on...</p>
+   <p>I am working on...</p>
    <ul>
     <li><a target="_blank" href="https://astory.app/">Astory</a> - an integrated development environment for authoring complete websites with HTML, CSS, and JavaScript</li>
     <li><a target="_blank" href="https://readablescript.com/">ReadableScript</a> - a dialect of JavaScript optimized for low visual complexity</li>
     <li><a target="_blank" href="https://tagme.in/">TagMeIn</a> - a social network for software developers</li>
     <li><a target="_blank" href="https://realisticabundance.com/">Realistic Abundance</a> - a conceptual framework for invoking global prosperity</li>
+    <li><a target="_blank" href="https://listmanager.dev/">List Manager</a> - an information organizer</li>
    </ul>
  </article>
  <details>
-  <summary>contact</summary>
+  <summary>Contact</summary>
  </details>
  <article id="contact"></article>
  <script>
@@ -94,16 +95,16 @@
   
   function contact() {
    document.getElementById('contact').innerHTML = `
-    <p>i may be reached by text message (preferred) or phone call at +1 (323) 283-9179</p>
-    <p>for questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a> or <a target="_blank" href="https://astory.app">https://astory.app</a> please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
-    <p>for all other inquiries, <a href="mailto:hello@nateferrero.com">hello<span>@</span>nateferrero.com</a></p>
-    <button onclick="goodbye()">until we meet again</button>
+    <p>Feel free to send me a text message (preferred) or phone call at +1 (323) 283-9179</p>
+    <p>For questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a> or <a target="_blank" href="https://astory.app">https://astory.app</a>, please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
+    <p>For all other inquiries, <a href="mailto:hello@nateferrero.com">hello<span>@</span>nateferrero.com</a></p>
+    <p><button onclick="goodbye()">Until we meet again</button></p>
    `
   }
   
   function goodbye() {
    document.getElementById('contact').innerHTML = `
-    <p><button onclick="contact()">are you human?</button></p>
+    <p><button onclick="contact()">Are you human?</button></p>
    `
   }
   

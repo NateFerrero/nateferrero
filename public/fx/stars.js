@@ -23,9 +23,14 @@ function stars() {
  Object.assign(window.spaceLayer.canvas, { width, height })
  window.spaceLayer.context.fillStyle = '#f9f9e008'
  window.spaceLayer.context.clearRect(0, 0, width, height)
- for (const id in new Array(1e5).fill()) {
+ let skew = 0
+ for (const id in new Array(5e4).fill()) {
+  skew += Math.random() * 2
+  if (skew >= 8) {
+   skew = 0
+  }
   const size = (( id * id ) % 4 ) + 1
-  const x = (12309814230987 * id) % width - size
+  const x = (12309814230987 * id) % width - size + skew
   const y = 12309814230987 * id % height - size
   window.spaceLayer.context.fillRect(x, y, size * 2, size * 2)
  }

@@ -18,7 +18,7 @@ body {
 
 body, select, button, input, textarea {
   font-family: 'Berkeley Mono', monospace;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 0.35px;
   line-height: 1.5;
   font-variation-settings: 'wght' 0;
@@ -37,7 +37,10 @@ details + article {
  height: 0;
  overflow: hidden;
  opacity: 0;
- transition: height 0.5s ease-out, opacity 2.5s ease-out;
+ transition: height 0.5s ease-out, opacity 1s ease-out;
+ background-color: #212121f2;
+ padding: 0 25px;
+ color: #bc7;
 }
 
 details[open] + article {
@@ -60,7 +63,7 @@ action {
 }
 
 action:hover, p:hover, li:hover, h1:hover, details *:not(div):hover {
- background-color: #080808;
+ background-color: #08080860;
  text-shadow: 0 0 2px #994;
 }
 
@@ -75,7 +78,7 @@ a, [onclick], summary, button {
 button {
  border: none;
  background-color: #232323;
- padding: 4px 8px;
+ padding: 6px 10px;
 }
 
 details button:hover {
@@ -109,6 +112,10 @@ span {
 
 h1, p, li {
  margin: 25px 0;
+}
+
+h6 {
+ margin: 50px 0 0;
 }
 
 [revealonhover] {
