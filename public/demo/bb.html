@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+ <head>
+  <title>bb</title>
+  <style>
+   canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    image-rendering: pixelated;
+   }
+  </style>
+ </head>
+ <body>
+  <script>
+   window.fold = (o, fn) => {
+    const r = {}
+    for (const k in o) {
+     r[k] = fn(o[k], k)
+    }
+    return r
+   }
+  </script>
+  <script>
+const species = 72
+const particles = new Map
+const power = 10
+const breath = 120
+const groups = 20
+const timeSpeed = 1
+const subWaveFrom = 2
+const subWaveTo = 64
+const color = 'red'
+
+let strength = power
+let timeMult = 1
+
+function blend(values, weights) {
+ const totalWeight = weights.reduce((a, b) => a + b, 0)
+ return values[0].map((v, i) => weights.reduce(
+  (sum, frac, j) => sum + frac * values[j][i] / totalWeight,
+  0
+ ))
+}
+
+function sine(x) {
+ return 0.5 - 0.5 * Math.cos(x * 2 * Math.PI)
+}
+
+const mouse = { x : 0, y: 0 }
+
+window.addEventListener('mousemove', e =>
+ Object.assign(mouse, {
+  x: e.clientX,
+  y: e.clientY
+ }))
+window.addEventListener('contextmenu', e => e.preventDefault())
+window.addEventListener('mousedown',
+ ({ button }) => strength = button ? -power * 10 : power * 10
+)
+window.addEventListener('mouseup', () => strength = power)
+
+function program(totalDots, dotIndex, size, time) {
+ const radius = 2 * Math.floor(
+  Math.min(size.width, size.height) / 2
+ )
+ const spec = species
+ const position = particles.get(dotIndex) ?? [ 0, 0 ]
+ const dotFraction = dotIndex / totalDots
+ const bR = 2 * radius * dotFraction * (1 - dotFraction)
+ const a = dotFraction * Math.PI * 2 * spec
+ const subWave = subWaveFrom + sine(time / Math.PI / 1e3) *
+  (subWaveTo - subWaveFrom)
+ const r = 1/4 + sine(time / breath) / 16
+  + sine(time * a) / 4
+  + sine(subWave * a) / 4
+ const destination = [
+  Math.sin(a) * r * bR,
+  Math.cos(a) * r * bR,
+ ]
+ const mouseLocation = [
+  mouse.x - size.width / 2,
+  mouse.y - size.height / 2
+ ]
+ const [dx, dy] = [0, 1].map(d => mouseLocation[d] - position[d])
+ const force = strength * radius / (
+  Math.max(1, dx * dx) + Math.max(1, dy * dy)
+ )
+ const newPosition = blend(
+  [ position, destination, mouseLocation ],
+  [
+   50, 1, force
+  ],
+ )
+ particles.set(
+  dotIndex, newPosition
+ )
+ const group = Math.floor(totalDots / groups)
+ return [
+  ...newPosition,
+  0.7 + 0.3 * sine(dotIndex * time / group / Math.PI)
+ ]
+}
+
+  </script>
+  <script>
+function dot() {
+ const ME = Symbol(
+  Math.floor(Math.random() * 1e12).toString(36)
+ )
+ const data = new Map
+ const named = new Map
+ let pointer = 0
+ function add(value) {
+  if (typeof value === 'undefined') {
+   return NaN
+  }
+  const index = pointer
+  data.set(index, value)
+  pointer++
+  return [ME, index]
+ }
+ function get(index) {
+  if (typeof index === 'object') {
+   if (Array.isArray(index)) {
+    if (index[0] !== ME) {
+     return undefined
+    }
+    return get(index[1])
+   }
+   // console.log('get', index, '>>', fold(index, (v, k) => named.get(k)))
+   return fold(index, (v, k) => named.get(k))
+  }
+  if (typeof index === 'string') {
+   return named.get(index)
+  }
+  if (typeof index !== 'number') {
+   return undefined
+  }
+  if (isNaN(index)) {
+   return undefined
+  }
+  return data.get(index)
+ }
+ function replace(a) {
+  return Array.isArray(a) && a[0] === ME
+   ? get(a[1])
+   : a
+ }
+ function addProperty(subject, ...property) {
+  const lastSegment = property.pop()
+  let item = get(subject)
+  if (!item) {
+   return NaN
+  }
+  for (const segment of property) {
+   if (!item || !item[segment]) {
+    return NaN
+   }
+   item = item[segment]
+  }
+  return add(item[lastSegment])
+ }
+ function callMethod(subject, method, ...args) {
+  const item = get(subject)
+  if (!item) {
+   return NaN
+  }
+  if (typeof item[method] !== 'function') {
+   return NaN
+  }
+  return add(item[method](...args.map(replace)))
+ }
+ function setProperty(subject, ...property) {
+  const value = property.pop()
+  const lastSegment = property.pop()
+  let item = get(subject)
+  for (const segment of property) {
+   if (!item || !item[segment]) {
+    return NaN // write fail
+   }
+   item = item[segment]
+  }
+  item[lastSegment] = value
+  return subject // write was ok
+ }
+ function updateNamed(obj) {
+  for (const k of Object.keys(obj)) {
+   named.set(k, obj[k])
+  }
+ }
+ return { add, addProperty, callMethod, get, replace, setProperty, updateNamed }
+}
+  </script>
+  <canvas id="main"></canvas>
+  <script>
+const root = dot()
+
+const win = root.add(window)
+const doc = root.addProperty(win, 'document')
+
+const Dots = root.add(12e3)
+const FramesPerSecond = root.add(30)
+const Size = root.add({ width: null, height: null })
+
+root.setProperty(
+ doc, 'body', 'style',
+ 'backgroundColor', 'black'
+)
+
+const canvas = root.callMethod(
+ doc, 'getElementById', 'main'
+)
+
+const layer = root.callMethod(
+ canvas, 'getContext', '2d'
+)
+
+const shade = root.add('#0000006f')
+
+const draw = root.add(() => {
+ const time = (root.get('time') ?? 0) + 1
+ root.updateNamed({ time })
+ const L = root.get(layer)
+ L.globalAlpha = 1
+ const size = root.get(root.get(Size))
+ L.fillStyle = root.get(shade)
+ L.fillRect(0, 0, size.width, size.height)
+ const origin = fold(size, x => Math.floor( x / 2 ))
+ const totalDots = root.get(Dots)
+ for (const dotIndex in Array(totalDots).fill()) {
+  L.fillStyle = [
+   '#f00',
+   '#ff0',
+   '#0f0',
+   '#f0f',
+   '#0ff',
+   '#fff',
+  ][dotIndex % 7]
+  const [x, y, a] = program(totalDots, dotIndex, size, time)
+  L.globalAlpha = a ?? 1
+  L.fillRect(origin.width - 1 + x, origin.height - 1 + y, 2, 2)
+ }
+})
+
+const resize = root.add(() => {
+ const { innerWidth: width, innerHeight: height } = root.get(win)
+ const size = { width, height }
+ root.updateNamed(size)
+ Object.assign(
+  root.get(canvas),
+  size
+ )
+ root.get(draw)()
+})
+
+root.get(resize)()
+
+root.callMethod(
+ win, 'addEventListener',
+ 'resize', resize
+)
+
+function animate() {
+ setTimeout(() => {
+  requestAnimationFrame(() => {
+   root.get(draw)()
+   animate()
+  })
+ }, 1e3 / root.get(FramesPerSecond))
+}
+
+animate()
+
+  </script>
+ </body>
+</html>
