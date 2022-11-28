@@ -1,0 +1,116 @@
+<!doctype html>
+<head>
+ <title>Nate Ferrero</title>
+ <link rel="stylesheet" type="text/css" href="./main.css"/>
+</head>
+<body>
+ <h1>Nate Ferrero</h1>
+ <p>Software engineer in the <a target="_blank" href="https://en.wikipedia.org/wiki/United_States">United States</a>
+  <span revealonhover>
+   MI ▹ NC ▹ CO ▹ CA ▹ MI ▹ WA ▹ MT ▹ NY ▹ VT ▹ CT ▹ MI
+  </span>
+ </p>
+ <article>
+  <p>
+   <action
+    onclick="for (const d of Array.from(document.getElementsByTagName('summary'))) { d.click() }"
+   >Toggle all</action>
+   You are at <a id="self"></a>
+  </p>
+ </article>
+ <details>
+  <summary>Timeline</summary>
+ </details>
+ <article>
+   <p>A summary of my path so far...</p>
+   <ul>
+    <li>2004 - 2005 Grand Rapids Community College</li>
+    <li>2005 - 2007 Grand Valley State University</li>
+    <li>2008 - 2010 Akatswiri Computers and Electronics</li>
+    <li>2010 - 2012 Momentum OS, Inc.</li>
+    <li>2012 - 2013 GraphEffect (a.k.a. Shift)</li>
+    <li>2013 - 2015 Gaikai</li>
+    <li>2015 - 2017 TD Ameritrade</li>
+    <li>2017        Outreach</li>
+    <li>2018 - 2019 Tinybeans</li>
+    <li>2018 -      TagMeIn, LLC</li>
+    <li>2018 -      Flatfile Inc.</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+   </ul>
+ </article>
+ <details>
+  <summary>Vision</summary>
+ </details>
+ <article>
+   <h3>Vision statement</h3>
+   <blockquote>“Our task is to make nature, the blind force of nature, into an instrument of universal resuscitation and to become a union of immortal beings.” ― <a target="_blank" href="https://transhumanism.fandom.com/wiki/Nikolai_Fyodorovich_Fyodorov">Nikolai F. Fyodorov</a></blockquote>
+  <h6>Why is this my vision?</h6>
+   <p>Because it is the best imaginable future.</p>
+ </article>
+ <details>
+  <summary>Mission</summary>
+ </details>
+ <article>
+   <h3>Mission statement</h3>
+  <blockquote>To possess deep understanding of <a target="_blank" href="https://kk.org/thetechnium/">The Technium</a>, and identify improvements to be made that cause positive impact on an individual, society, or the world.</blockquote>
+  <h6>Why is this my mission?</h6>
+  <p>Because as a mammal, I have a limited lifespan. Patches of code I contribute to the Technium will outlive me.</p>
+ </article>
+ <details>
+  <summary>Projects</summary>
+ </details>
+ <article>
+   <p>I am working on...</p>
+   <ul>
+    <li><a target="_blank" href="https://astory.app/">Astory</a> - an integrated development environment for authoring complete websites with HTML, CSS, and JavaScript</li>
+    <li><a target="_blank" href="https://readablescript.com/">ReadableScript</a> - a dialect of JavaScript optimized for low visual complexity</li>
+    <li><a target="_blank" href="https://tagme.in/">TagMeIn</a> - a social network for software developers</li>
+    <li><a target="_blank" href="https://realisticabundance.com/">Realistic Abundance</a> - a conceptual framework for invoking global prosperity</li>
+    <li><a target="_blank" href="https://listmanager.dev/">List Manager</a> - an information organizer</li>
+    <li><a target="_blank" href="https://tagme.in/mirror/">Mirror.js</a> - a JavaScript utility function kit</li>
+   </ul>
+ </article>
+ <details>
+  <summary>Contact</summary>
+ </details>
+ <article id="contact"></article>
+ <script>
+  const self = document.getElementById('self')
+  const address = window.location.href
+  self.setAttribute('href', address)
+  self.innerText = address
+  
+  function contact() {
+   document.getElementById('contact').innerHTML = `
+    <p>Feel free to send me a text message (preferred) or phone call at +1 (323) 283-9179</p>
+    <p>For questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a> or <a target="_blank" href="https://astory.app">https://astory.app</a>, please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
+    <p>For all other inquiries, <a href="mailto:hello@nateferrero.com">hello<span>@</span>nateferrero.com</a></p>
+    <p><button onclick="goodbye()">Until we meet again</button></p>
+   `
+  }
+  
+  function goodbye() {
+   document.getElementById('contact').innerHTML = `
+    <p><button onclick="contact()">Are you human?</button></p>
+   `
+  }
+  
+  goodbye()
+ </script>
+ <script src="./fx/stars.js"></script>
+ <script src="./util/rememberDetailsOpen.js"></script>
+</body>
