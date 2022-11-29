@@ -20,7 +20,7 @@
    line-height: 1.85;
   }
 
-  body>* {
+  body>*, body>details>a {
    color: #ffffc8;
    padding: 2em;
    display: block;
@@ -29,6 +29,10 @@
    display: grid;
    align-content: center;
    align-items: center;
+  }
+
+  summary {
+   cursor: pointer;
   }
 
   hr {
@@ -46,7 +50,7 @@
    text-align: center;
   }
 
-  a:hover {
+  a:hover, summary:hover {
    background-color: #ffffff11;
   }
 
