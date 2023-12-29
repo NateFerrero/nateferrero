@@ -1,14 +1,316 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
  <title>Nathanael S. Ferrero</title>
+ <meta charset="utf-8" />
+ <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+ />
  <style>
-  body { background-color: black; }
-  iframe {
-   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-   border: none;
+  body,
+  html {
+   height: 100dvh; /* new browsers */
+   height: 100vh; /* old browsers */
+   margin: 0;
+   max-height: 100dvh; /* new browsers */
+   max-height: 100vh; /* old browsers */
+   min-height: -webkit-fill-available;
+   min-height: 100%;
+   overflow: hidden;
+   padding: 0;
+   width: 100%;
+  }
+  body {
+   background-color: black;
+  }
+  .sunrise {
+   background: linear-gradient(
+    to bottom,
+    #002f4b,
+    #034672,
+    #07528c,
+    #335d8d,
+    #597090,
+    #7f838f,
+    #b9a497
+   );
+  }
+  .star {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 2px;
+   height: 2px;
+   background: white;
+   border-radius: 50%;
+
+   /* Glow */
+   box-shadow: 0 0 3px white, 0 0 5px white;
+  }
+  .meteors > div {
+   background: white;
+   border-radius: 50%;
+   /* Glow */
+   box-shadow: 0 0 3px white, 0 0 5px white;
+   height: 4px;
+   position: fixed;
+   transition: top 2s linear, left 2s linear,
+    opacity 1.5s ease-out;
+   width: 4px;
+   z-index: 3;
+  }
+  .meteors > div::after {
+   content: '';
+
+   /* Position next to meteor */
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   width: 120px;
+   height: 4px;
+   background: white;
+   transform: scaleY(0.5);
+   transform-origin: 0 2px;
+
+   /* Tapered point */
+   border-radius: 100% 0 60% 50%;
+
+   /* Fade out */
+   opacity: 0.75;
+  }
+
+  .horizon {
+   box-sizing: border-box;
+   bottom: 0;
+   border-bottom: 1vh solid #000;
+   height: 2vh;
+   left: 0;
+   position: absolute;
+   right: 0;
+   background: linear-gradient(
+    to bottom,
+    transparent,
+    #000000a0
+   );
+   z-index: 2;
+  }
+
+  .city {
+   bottom: 0;
+   height: 4vh;
+   position: absolute;
+   width: 25vw;
+  }
+
+  .building {
+   background: linear-gradient(#202020c0, black);
+   bottom: 0;
+   display: inline-block;
+   height: 7vh;
+   position: absolute;
+   transform-origin: bottom center;
+   width: 2vw;
+  }
+
+  .house {
+   background: black;
+   bottom: 0;
+   height: 2vh;
+   position: absolute;
+   transform-origin: bottom center;
+   width: 2vw;
+  }
+
+  .tree {
+   border-bottom: 3vh solid #002010d0;
+   border-left: 0.8vh solid transparent;
+   border-right: 0.8vh solid transparent;
+   bottom: 0;
+   height: 0;
+   position: absolute;
+   transform-origin: bottom center;
+   width: 0;
+  }
+
+  .tree::after {
+   content: '';
+   border-bottom: 3vh solid #002010d0;
+   border-left: 0.8vh solid transparent;
+   border-right: 0.8vh solid transparent;
+   top: 0;
+   height: 0;
+   position: absolute;
+   width: 0;
+   transform: translateY(-0.3vh);
+  }
+
+  .tree::before {
+   content: '';
+   border-bottom: 3vh solid #002010d0;
+   border-left: 0.8vh solid transparent;
+   border-right: 0.8vh solid transparent;
+   top: 0;
+   height: 0;
+   position: absolute;
+   width: 0;
+   transform: translateY(-0.5vh);
+  }
+
+  .moon {
+   position: absolute;
+   width: 10vh;
+   height: 10vh;
+   border-radius: 50%;
+   box-shadow: 0 0 2vh #ffffff60;
+   background-color: #d0d0d0;
+   transform: rotate(-30deg);
+   overflow: hidden;
+   z-index: 1;
+  }
+
+  .moon::before,
+  .moon::after {
+   position: absolute;
+   box-shadow: inset 1px 1px 1px #00000020,
+    1px 1px 1px #00000020;
+   border-radius: 50%;
+   content: '';
+   z-index: 0;
+  }
+
+  .moon::before {
+   height: 15%;
+   left: 20%;
+   top: 15%;
+   width: 15%;
+  }
+
+  .moon::after {
+   height: 25%;
+   left: 10%;
+   top: 55%;
+   width: 25%;
+  }
+
+  .moon-shade {
+   border-radius: 50%;
+   box-shadow: inset 0 0 0.5vh #ffffffff;
+   display: block;
+   height: 100%;
+   left: 2vh;
+   opacity: 0.75;
+   position: relative;
+   top: 0;
+   width: 85%;
+   z-index: 1;
+  }
+
+  .engine-container {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #335d8dd0;
+   color: #ffffffd0;
+   text-align: center;
+   border-radius: 1.5vh;
+   box-shadow: 0 0 10vh #00000080;
+   z-index: 5;
+   max-width: 80vw;
+   max-height: 80vh;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+  }
+  .engine-container > h2 {
+   font-family: serif;
+   margin: 0;
+   padding: 3vh 3vh 0;
+  }
+  .engine-sections {
+   display: flex;
+   flex-direction: row;
+   flex-shrink: 0;
+   font-family: sans-serif;
+   gap: 1vh;
+   justify-content: center;
+   overflow-x: auto;
+   overflow-y: hidden;
+   padding: 3vh;
+  }
+  .engine-sections > a {
+   text-decoration: none;
+   border-radius: 1.5vh;
+   padding: 1.5vh 2vh;
+   color: inherit;
+   margin: 0;
+   transition: text-shadow 0.5s ease,
+    background-color 0.5s ease, filter 0.25s ease;
+  }
+  .engine-sections > a.current {
+   background-color: #ffffff40;
+   box-shadow: inset 0 0 1vh #ffffffd0, 0 0 1vh #ffffffd0;
+  }
+  *::selection {
+   background-color: #00000080;
+   color: #ffff80ff;
+  }
+  *:focus {
+   background-color: #00000080 !important;
+   box-shadow: inset 0 0 1vh #000000d0, 0 0 1vh #000000d0 !important;
+   outline: none;
+   filter: invert(1);
+   text-shadow: 0 0 5px #000000, 0 0 5px #000000,
+    0 0 5px #000000, 0 0 5px #000000;
+  }
+  .content {
+   box-sizing: border-box;
+   flex-grow: 1;
+   font-family: sans-serif;
+   line-height: 1.65;
+   max-width: 90vw;
+   min-width: 100%;
+   opacity: 1;
+   overflow-x: hidden;
+   overflow-y: auto;
+   padding: 0 3vh 3vh;
+   text-align: left;
+   transition: opacity 1.5s ease;
+   width: 100%;
+  }
+  .content:empty {
+   opacity: 0;
+   padding: 0;
+  }
+  .content a {
+   border-bottom: 2px solid;
+   text-decoration: none;
+   color: inherit;
+  }
+  .content ul {
+   padding-left: 1em;
+  }
+  .content > *:first-child {
+   margin-top: 0;
+  }
+  .content > *:last-child {
+   margin-bottom: 0;
+  }
+  sup {
+   font-size: 65%;
+   vertical-align: text-top;
+  }
+  li {
+   margin: 0.5em 0;
   }
  </style>
 </head>
-<body>
- <iframe src="https://tagme.in/view#7spjh97m2ns0hfecpxwqvh7aqzjzl6loje4a995q"></iframe>
+<body class="sunrise">
+ <script src="./moon.js"></script>
+ <script src="./stars.js"></script>
+ <script src="./meteors.js"></script>
+ <script src="./horizon.js"></script>
+ <script src="./published.js"></script>
+ <script src="./.drafts.js"></script>
+ <script src="./engine.js"></script>
 </body>
