@@ -32,6 +32,18 @@ function markdownToHtml(text) {
  return text
 }
 
+window.addEventListener('keydown', (event) => {
+ if (event.key === ' ' && event.target.tagName === 'A') {
+  event.preventDefault()
+  window.location.href = event.target.getAttribute('href')
+ }
+
+ if (event.key === 'Escape') {
+  event.preventDefault()
+  window.location.href = '/#'
+ }
+})
+
 const container = document.createElement('div')
 container.classList.add('engine-container')
 document.body.appendChild(container)
@@ -43,6 +55,12 @@ container.appendChild(title)
 const sections = document.createElement('div')
 sections.classList.add('engine-sections')
 container.appendChild(sections)
+
+const backToHome = document.createElement('a')
+backToHome.setAttribute('href', '/#')
+backToHome.classList.add('back-to-home')
+document.body.appendChild(backToHome)
+backToHome.textContent = '‹'
 
 const content = document.createElement('div')
 content.classList.add('content')
@@ -136,6 +154,10 @@ function route() {
    `
    break
  }
+ backToHome.classList[
+  content.innerHTML === '' ? 'remove' : 'add'
+ ]('visible')
+ container.scrollTo({ behavior: 'smooth', top: 0 })
 }
 
 route()
