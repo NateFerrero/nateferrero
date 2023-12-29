@@ -84,8 +84,8 @@ function route() {
     <h3>Coaching subjects</h3>
     <ul>
      <li>AI-assisted discovery of life purpose &lsquo;Ikigai&rsquo; &mdash; identify a career that will motivate and inspire you to succeed</li>
-     <li>Software and web development fundamentals, fixing bugs in realtime, solving coding challenges</li>
-     <li>Sensitivity and spiritual growth</li>
+     <li>JavaScript, TypeScript, and web development fundamentals; fixing software bugs in real time; learning to code by solving coding challenges together</li>
+     <li>Sensitivity and spiritual growth; ethical living</li>
      <li>Social skills and personal development</li>
      <li>Identifying and transcending life obstacles</li>
      </ul>
@@ -93,11 +93,13 @@ function route() {
    break
   case '#/contact':
    content.innerHTML = `
-    <p>Send me a text message (preferred if contacting for the first time) or give me a phone call at <b>+1 (323) 283-9179</b></p>
-    <p>For questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a>, please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
-    <p>For all other inquiries, email <a href="mailto:hello@nateferrero.com">hello<span>@</span>nateferrero.com</a></p>
+   <p>For questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a>, please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
+   <p>For all other inquiries, email <a href="mailto:hello@nateferrero.com">hello<span>@</span>nateferrero.com</a></p>
+   <p>Text or phone call at <b>+1 (323) 283-9179</b></p>
+   <p>When writing, please introduce yourself and state your request in the first message</p>
     <h3>Social media</h3>
     <ul>
+     <li><a target="_blank" href="https://www.codementor.io/@nateferrero">Codementor</a></li>
      <li><a target="_blank" href="https://www.facebook.com/nateferrero/">Facebook</a></li>
      <li><a target="_blank" href="https://github.com/NateFerrero">GitHub</a></li>
      <li><a target="_blank" href="https://ailaai.app/nate">Hi Town</a></li>
