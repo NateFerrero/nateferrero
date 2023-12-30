@@ -39,23 +39,23 @@ globalThis.MAIN = {
   <p>He also has experience working with children and high school students. He was a volunteer tutor at Central High School in Grand Rapids, MI for one summer in the after-school support lab.</p>
   <h3>Testimonials</h3>
   <blockquote>
-   <p>⭐⭐⭐⭐⭐</p>
-   <p>awesome session with Nate. He helps me resolve a tricky issue that took me days but with him, just 50 minutes. thank you so much, Nate. Highly recommend.</p>
+   <p style="margin-bottom: 0;">⭐⭐⭐⭐⭐</p>
+   <p style="margin-top: 0;">awesome session with Nate. He helps me resolve a tricky issue that took me days but with him, just 50 minutes. thank you so much, Nate. Highly recommend.</p>
    <p><em>&mdash; Tu T., software coaching client</em></p>
   </blockquote>
   <blockquote>
-   <p>⭐⭐⭐⭐⭐</p>
-   <p>Could not ask for a better mentor. Grateful to have found Nate. Thank you.</p>
+   <p style="margin-bottom: 0;">⭐⭐⭐⭐⭐</p>
+   <p style="margin-top: 0;">Could not ask for a better mentor. Grateful to have found Nate. Thank you.</p>
    <p><em>&mdash; Silvia F., software coaching client</em></p>
   </blockquote>
   <blockquote>
-   <p>⭐⭐⭐⭐⭐</p>
-   <p>I have been using Nate for a while now and if their was an option to give him a sixth star I would. His style of working with you is always to help you understand the solution and not just fix the problem. He always looks for the best solution to the problem not just the fastest solution. I have worked with many different mentors on codementor and by far Nate is a top tier mentor.</p>
+   <p style="margin-bottom: 0;">⭐⭐⭐⭐⭐</p>
+   <p style="margin-top: 0;">I have been using Nate for a while now and if their was an option to give him a sixth star I would. His style of working with you is always to help you understand the solution and not just fix the problem. He always looks for the best solution to the problem not just the fastest solution. I have worked with many different mentors on codementor and by far Nate is a top tier mentor.</p>
    <p><em>&mdash; Luis B., software coaching client</em></p>
   </blockquote>
   <blockquote>
-   <p>⭐⭐⭐⭐⭐</p>
-   <p>Great mentor! Really knowledgable and was able to learn a lot in one session!</p>
+   <p style="margin-bottom: 0;">⭐⭐⭐⭐⭐</p>
+   <p style="margin-top: 0;">Great mentor! Really knowledgable and was able to learn a lot in one session!</p>
    <p><em>&mdash; H. M., software coaching client</em></p>
   </blockquote>
   <p><a href="/#/contact">Contact to schedule your first session &rarr;</a></p>
