@@ -90,7 +90,16 @@ function route() {
   }
  }
  content.innerHTML = ''
+ backToHome.classList.add('visible')
  switch (location.hash) {
+  case '':
+  case '#':
+  case '#/':
+   backToHome.classList.remove('visible')
+   content.innerHTML = `
+     <p class="info-text">Website built with assistance from with https://claude.ai and https://chat.openai.com</p>
+     `
+   break
   case '#/coaching':
    content.innerHTML = globalThis.MAIN.Coaching
    break
@@ -104,9 +113,6 @@ function route() {
    content.innerHTML = globalThis.MAIN.Writing
    break
  }
- backToHome.classList[
-  content.innerHTML === '' ? 'remove' : 'add'
- ]('visible')
  container.scrollTo({ behavior: 'smooth', top: 0 })
 }
 

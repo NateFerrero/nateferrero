@@ -15,8 +15,8 @@ globalThis.MAIN = {
    <li>Identifying and transcending life obstacles</li>
    <li>AI-assisted discovery of life purpose &lsquo;Ikigai&rsquo; &mdash; identify a career that will motivate and inspire you to succeed</li>
   </ul>
-  <div style="text-align: center;">
-   <div style="display: inline-block; aspect-ratio: 1; max-width: 100%; position: relative; width: 500px; height: 500px; margin: -50px;">
+  <div style="text-align: center; overflow-x: auto; overflow-y: hidden;">
+   <div style="display: inline-block; aspect-ratio: 1; position: relative; width: 500px; height: 500px; margin: -50px;">
     <div style="border: 2px solid white; position: absolute; top: 40%; left: 40%; width: 240px; height: 240px; margin-top: -120px; margin-left: -120px; border-radius: 50%; background: #ffff00a0; mix-blend-mode: screen;"></div>
     <div style="border: 2px solid white; position: absolute; top: 40%; right:40%; width: 240px; height: 240px; margin-top: -120px; margin-right: -120px; border-radius: 50%; background: #ff8000a0; mix-blend-mode: screen;"></div>
     <div style="border: 2px solid white; position: absolute; bottom: 40%; left: 40%; width: 240px; height: 240px; margin-bottom: -120px; margin-left: -120px; border-radius: 50%; background: #0000ffa0; mix-blend-mode: screen;"></div>
@@ -58,7 +58,7 @@ globalThis.MAIN = {
    <p>Great mentor! Really knowledgable and was able to learn a lot in one session!</p>
    <p><em>&mdash; H. M., software coaching client</em></p>
   </blockquote>
-  <p><a href="/#/contact">Contact to schedule your first session &rarr;</p>
+  <p><a href="/#/contact">Contact to schedule your first session &rarr;</a></p>
  `,
  Contact: `
   <p>For questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a>, please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
