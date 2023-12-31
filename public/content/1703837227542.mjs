@@ -1,19 +1,11 @@
 export const published = false
-export const tags = []
+export const tags = ['Music']
 export const time = 1703837227542
-export const title = 'New post'
-export const snippet = 'Example snippet'
+export const title = 'Praise instrumentals'
+export const snippet = ''
 export const content = `
 
 # Heading One
 
-**bold text** 
-
-*italicized text*
-
-- First list item
-- Second list item
-
-[This links to GitHub](https://github.com)
-
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bcXzSYUjchU?si=eFCMfVKvK5nV-0dm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 `

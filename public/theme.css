@@ -346,3 +346,8 @@ article p,
 article ul {
  margin: 0.5rem 0;
 }
+article img {
+ box-shadow: 0 0 1em #00000080;
+ margin: 1em;
+ max-width: calc(100% - 2em);
+}
