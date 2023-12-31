@@ -18,12 +18,13 @@ async function fileExists(filename) {
 }
 
 async function generateOGFile(post) {
+ const shareHTMLFileName = post.id.toString(10) + '.html'
  const filename = join(
   rootDirectory,
   'public',
   'journal',
   'entry',
-  post.id.toString(10) + '.html'
+  shareHTMLFileName
  )
 
  if (await fileExists(filename)) {
@@ -33,6 +34,7 @@ async function generateOGFile(post) {
   return
  }
 
+ const shareUrl = `https://nateferrero.com/journal/entry/${shareHTMLFileName}`
  const url = `https://nateferrero.com/#/journal/entry/${post.time}`
 
  const html = `<!DOCTYPE html>
@@ -40,7 +42,7 @@ async function generateOGFile(post) {
  <head>
    <title>${post.title}</title>
    <meta property="og:site_name" content="Nathanael Ferrero">
-   <meta property="og:url" content="${url}">
+   <meta property="og:url" content="${shareUrl}">
    <meta property="og:title" content="${post.title}" />
    <meta property="og:description" content="${
     post.snippet
