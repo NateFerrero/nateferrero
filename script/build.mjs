@@ -12,8 +12,8 @@ const dir = join(rootDirectory, 'public', 'content')
 
 const files = await readdir(dir)
 
-const publishedTimes = []
-const draftTimes = []
+const published = []
+const drafts = []
 
 for (const file of files) {
  const path = `${dir}/${file}`
@@ -27,8 +27,7 @@ for (const file of files) {
   )
   continue
  }
- await import(path)
- const postData = globalThis.content[time]
+ const postData = await import(path)
  if (!postData) {
   console.warn(
    `Post with file name was not loaded: ${JSON.stringify(
@@ -38,39 +37,34 @@ for (const file of files) {
   continue
  }
  if (postData.published) {
-  publishedTimes.push(time)
+  published.push(postData)
  } else {
-  draftTimes.push(time)
+  drafts.push(postData)
  }
 }
 
 console.log(
- `Found ${publishedTimes.length} published post${
-  publishedTimes.length === 1 ? '' : 's'
+ `Found ${published.length} published post${
+  published.length === 1 ? '' : 's'
  }`
 )
+
 console.log(
- `Found ${draftTimes.length} draft post${
-  draftTimes.length === 1 ? '' : 's'
+ `Found ${drafts.length} draft post${
+  drafts.length === 1 ? '' : 's'
  }`
 )
 
 await writeFile(
- join(rootDirectory, 'public', 'published.js'),
- `globalThis.publishedTimes = ${JSON.stringify(
-  publishedTimes,
-  null,
-  1
- )}`
+ join(rootDirectory, 'public', 'published.json'),
+ JSON.stringify(published, null, 1)
 )
+
 await writeFile(
- join(rootDirectory, 'public', '.drafts.js'),
- `globalThis.draftTimes = ${JSON.stringify(
-  draftTimes,
-  null,
-  1
- )}`
+ join(rootDirectory, 'public', '.drafts.json'),
+ JSON.stringify(drafts, null, 1)
 )
+
 console.log(
  `Build complete: ${Date.now() - buildStartTime}ms`
 )

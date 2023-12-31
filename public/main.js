@@ -61,14 +61,15 @@ globalThis.MAIN = {
   <p><a href="/#/contact">Contact to schedule your first session &rarr;</a></p>
  `,
  Contact: `
+  <h3>Get in touch</h3>
   <p>For questions related to <a target="_blank" href="https://tagme.in">https://tagme.in</a>, please email <a href="mailto:nate@tagme.in">nate<span>@</span>tagme.in</a></p>
   <p>For all other inquiries, email <a href="mailto:hello@nateferrero.com">hello<span>@</span>nateferrero.com</a></p>
   <p>Text or phone call at <b>+1 (323) 283-9179</b></p>
   <p>When writing, please introduce yourself and state your request in the first message</p>
-   <h3>Social media</h3>
-   <ul>
-    <li><a target="_blank" href="https://www.codementor.io/@nateferrero">Codementor</a></li>
-    <li><a target="_blank" href="https://www.facebook.com/nateferrero/">Facebook</a></li>
+  <h3>Social media</h3>
+  <ul>
+  <li><a target="_blank" href="https://www.codementor.io/@nateferrero">Codementor</a></li>
+  <li><a target="_blank" href="https://www.facebook.com/nateferrero/">Facebook</a></li>
     <li><a target="_blank" href="https://github.com/NateFerrero">GitHub</a></li>
     <li><a target="_blank" href="https://ailaai.app/nate">Hi Town</a></li>
     <li><a target="_blank" href="https://www.instagram.com/nateferrero/">Instagram</a></li>
@@ -76,8 +77,9 @@ globalThis.MAIN = {
     <li><a target="_blank" href="https://stackoverflow.com/users/1008429/nate-ferrero">Stack Overflow</a></li>
     <li><a target="_blank" href="https://twitter.com/NateFerrero">Twitter / X</a></li>
     <li><a target="_blank" href="https://www.youtube.com/NateFerrero">YouTube</a></li>
-   </ul>
-  `,
+    </ul>
+    `,
+ Journal: '',
  Software: `
    <h3>Mission statement</h3>
    <p>To possess deep understanding of <a target="_blank" href="https://kk.org/thetechnium/">The Technium</a>, and identify improvements to be made that cause positive impact on an individual, society, or the world.</p>
@@ -95,7 +97,4 @@ globalThis.MAIN = {
    </ul>
    <p>See <a href="https://github.com/tagmein/">TagMeIn on GitHub</a> for more projects.</p>
   `,
- Writing: `
-  <h3>🚧 Under construction 🚧</h3>
- `,
 }

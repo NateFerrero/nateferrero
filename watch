@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-nodemon --watch './public/content' --ext 'js' --exec 'node script/build.mjs'
+nodemon --watch './public/content' --ext 'mjs' --exec 'node script/build.mjs'

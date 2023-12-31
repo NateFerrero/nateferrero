@@ -12,32 +12,28 @@ const postFileName = join(
  rootDirectory,
  'public',
  'content',
- `${time}.js`
+ `${time}.mjs`
 )
 
-const contents = `globalThis.content = globalThis.content ?? {}
-globalThis.content[${time}] = {
- published: false,
- tags: [],
- time: ${time},
- title: 'New post',
- content: \`
+const contents = `export const published = false
+export const tags = []
+export const time = ${time}
+export const title = 'New post'
+export const snippet = ''
+export const content = \`
 
- # Heading One
+# Heading One
 
- **bold text** 
- 
- *italicized text*
- 
- - First list item
- - Second list item
- 
- [This links to GitHub](https://github.com)
+**bold text** 
 
-\`,
-}
+*italicized text*
 
-globalThis.registerContent?.(${time})
+- First list item
+- Second list item
+
+[This links to GitHub](https://github.com)
+
+\`
 `
 
 await writeFile(postFileName, contents, {

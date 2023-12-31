@@ -22,6 +22,7 @@ createServer((req, res) => {
     'Content-Type': err
      ? 'text/plain'
      : {
+        '.css': 'text/css',
         '.js': 'text/javascript',
        }[extname(req.url)] ?? 'text/html',
    })

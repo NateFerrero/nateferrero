@@ -1,37 +1,3 @@
-function markdownToHtml(text) {
- // H1
- text = text.replace(/^# (.*$)/gm, '<h2>$1</h2>')
-
- // H2
- text = text.replace(/^## (.*$)/gm, '<h3>$1</h3>')
-
- // H3
- text = text.replace(/^### (.*$)/gm, '<h4>$1</h4>')
-
- // H4
- text = text.replace(/^#### (.*$)/gm, '<h5>$1</h5>')
-
- // H5
- text = text.replace(/^##### (.*$)/gm, '<h6>$1</h6>')
-
- // Bold
- text = text.replace(/\*\*(\S+)\*\*/g, '<b>$1</b>')
-
- // Italic
- text = text.replace(/\*([^*]+)\*/g, '<i>$1</i>')
-
- // Links
- text = text.replace(
-  /\[([^]]+)\]\(https?:\/\/\S+\)/g,
-  '<a href="$2">$1</a>'
- )
-
- // Lists
- text = text.replace(/^-\s(.*$)/gm, '<li>$1</li>')
-
- return text
-}
-
 window.addEventListener('keydown', (event) => {
  if (event.key === ' ' && event.target.tagName === 'A') {
   event.preventDefault()
@@ -91,27 +57,37 @@ function route() {
  }
  content.innerHTML = ''
  backToHome.classList.add('visible')
- switch (location.hash) {
-  case '':
-  case '#':
-  case '#/':
-   backToHome.classList.remove('visible')
-   content.innerHTML = `
+ if (location.hash.startsWith('#/journal/entry/')) {
+  const time = parseInt(location.hash.split('/').pop())
+  content.appendChild(journalNetwork.viewEntry(time))
+ } else if (location.hash.startsWith('#/journal/tag/')) {
+  const tag = decodeURIComponent(
+   location.hash.split('/').pop()
+  )
+  content.appendChild(journalNetwork.viewTag(tag))
+ } else {
+  switch (location.hash) {
+   case '':
+   case '#':
+   case '#/':
+    backToHome.classList.remove('visible')
+    content.innerHTML = `
      <p class="info-text">Website built with assistance from with https://claude.ai and https://chat.openai.com</p>
      `
-   break
-  case '#/coaching':
-   content.innerHTML = globalThis.MAIN.Coaching
-   break
-  case '#/contact':
-   content.innerHTML = globalThis.MAIN.Contact
-   break
-  case '#/software':
-   content.innerHTML = globalThis.MAIN.Software
-   break
-  case '#/writing':
-   content.innerHTML = globalThis.MAIN.Writing
-   break
+    break
+   case '#/coaching':
+    content.innerHTML = globalThis.MAIN.Coaching
+    break
+   case '#/contact':
+    content.innerHTML = globalThis.MAIN.Contact
+    break
+   case '#/journal':
+    content.appendChild(journalNetwork.view())
+    break
+   case '#/software':
+    content.innerHTML = globalThis.MAIN.Software
+    break
+  }
  }
  container.scrollTo({ behavior: 'smooth', top: 0 })
 }
