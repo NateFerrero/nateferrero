@@ -8,6 +8,8 @@ const rootDirectory = dirname(
  dirname(import.meta.url.replace(/^file\:/, ''))
 )
 
+const rootUrl = 'https://nateferrero.com'
+
 async function fileExists(filename) {
  try {
   await access(filename)
@@ -34,8 +36,8 @@ async function generateOGFile(post) {
   return
  }
 
- const shareUrl = `https://nateferrero.com/journal/entry/${shareHTMLFileName}`
- const url = `https://nateferrero.com/#/journal/entry/${post.time}`
+ const shareUrl = `${rootUrl}/journal/entry/${shareHTMLFileName}`
+ const url = `${rootUrl}/#/journal/entry/${post.time}`
 
  const html = `<!DOCTYPE html>
 <html>
@@ -50,7 +52,7 @@ async function generateOGFile(post) {
    }" />
    ${
     post.image
-     ? `<meta property="og:image" content="${post.image}" />`
+     ? `<meta property="og:image" content="${rootUrl}${post.image}" />`
      : ''
    }
  </head>
