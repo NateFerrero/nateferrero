@@ -41,6 +41,7 @@ async function generateOGFile(post) {
 <html>
  <head>
    <title>${post.title}</title>
+   <meta property="og:type" content="article">
    <meta property="og:site_name" content="Nathanael Ferrero">
    <meta property="og:url" content="${shareUrl}">
    <meta property="og:title" content="${post.title}" />
