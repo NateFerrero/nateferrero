@@ -351,3 +351,13 @@ article img {
  margin: 1em;
  max-width: calc(100% - 2em);
 }
+article .copy {
+ background-color: #ffffff20;
+ border-radius: 0.25em;
+ border: 2px solid #ffffff40;
+ cursor: pointer;
+ filter: grayscale(1);
+ float: right;
+ margin-top: 0.5em;
+ padding: 0.5em;
+}

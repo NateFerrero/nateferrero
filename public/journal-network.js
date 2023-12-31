@@ -141,6 +141,22 @@ globalThis.journalNetwork = {
    article.classList.add('draft')
   }
 
+  const copyButton = document.createElement('button')
+  copyButton.textContent = '\u{1F4CB}'
+  copyButton.classList.add('copy')
+  copyButton.setAttribute(
+   'title',
+   'Copy URL to share this post'
+  )
+
+  copyButton.addEventListener('click', () => {
+   navigator.clipboard.writeText(
+    `https://nateferrero.com/journal/entry/${post.id}.html`
+   )
+  })
+
+  article.appendChild(copyButton)
+
   const h1 = document.createElement('h1')
   const titleLink = document.createElement('a')
   titleLink.href = `/#/journal/entry/${post.time}`

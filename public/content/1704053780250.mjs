@@ -11,6 +11,7 @@ export const title =
  'The American Civil War: A Failure of Moral Creativity'
 export const snippet =
  'Leaders faced with dissent must respond with patient, moral courage seeking unity through inclusive justice rather than destructive coercion in order to achieve lasting, ethical bonds in the name of nationhood.'
+export const image = '/resources/covers/civil-war-2.png'
 export const content = `
 
 ## *The Mystic Chords of Memory*

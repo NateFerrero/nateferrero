@@ -1,4 +1,4 @@
-import { readdir, writeFile } from 'fs/promises'
+import { access, readdir, writeFile } from 'fs/promises'
 import { basename, dirname, extname, join } from 'path'
 
 const buildStartTime = Date.now()
@@ -7,6 +7,57 @@ console.log('Starting build...')
 const rootDirectory = dirname(
  dirname(import.meta.url.replace(/^file\:/, ''))
 )
+
+async function fileExists(filename) {
+ try {
+  await access(filename)
+  return true
+ } catch {
+  return false
+ }
+}
+
+async function generateOGFile(post) {
+ const filename = join(
+  rootDirectory,
+  'public',
+  'journal',
+  post.id.toString(10) + '.html'
+ )
+
+ if (await fileExists(filename)) {
+  console.log(
+   `OG file already exists, skipping: ${filename}`
+  )
+  return
+ }
+
+ const url = `https://nateferrero.com/#/journal/entry/${post.time}`
+
+ const html = `<!DOCTYPE html>
+<html>
+ <head>
+   <title>${post.title}</title>
+   <meta property="og:site_name" content="Nathanael Ferrero">
+   <meta property="og:url" content="${url}">
+   <meta property="og:title" content="${post.title}" />
+   <meta property="og:description" content="${
+    post.snippet
+   }" />
+   ${
+    post.image
+     ? `<meta property="og:image" content="${post.image}" />`
+     : ''
+   }
+ </head>
+ <body onload="window.location.href='${url}'">
+   Redirecting...
+ </body>
+</html>
+`
+
+ await writeFile(filename, html)
+}
 
 const dir = join(rootDirectory, 'public', 'content')
 
@@ -27,16 +78,18 @@ for (const file of files) {
   )
   continue
  }
- const postData = await import(path)
- if (!postData) {
+ const postData = {
+  ...((await import(path)) ?? {}),
+  id: time,
+ }
+ if (!postData.title) {
   console.warn(
-   `Post with file name was not loaded: ${JSON.stringify(
-    file
-   )}`
+   `Post was missing a title: ${JSON.stringify(file)}`
   )
   continue
  }
  if (postData.published) {
+  await generateOGFile(postData)
   published.push(postData)
  } else {
   drafts.push(postData)
