@@ -22,6 +22,7 @@ async function generateOGFile(post) {
   rootDirectory,
   'public',
   'journal',
+  'entry',
   post.id.toString(10) + '.html'
  )
 
