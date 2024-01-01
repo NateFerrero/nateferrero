@@ -46,6 +46,8 @@ Rather than meet the dissent calling for the righteous end of slavery with equal
 
 # Introduction
 
+We must unambiguously state that the institution of chattel slavery constituted a horrific, racist system of subjugation, torture and familiy separation that systematically denied humanity to millions. This constituted a grave injustice and deprivation of human rights no matter what failures followed in political leadership. Any analysis focused on the road to the Civil War must begin by morally centering and clarifying the violent dehumanization perpetrated through slavery beforehand. America's leadership lacked courage long before compromise broke down between North and South - they failed as soon as they acquiesced to codifying such an immoral economic system rooted in bondage, murder and the vile commodification of human beings. No political disagreements between free and slave states could possibly carry equitable weight beside this ethical catastrophe and denial of personhood underway in the South. Tragically, it took the spectacle of war for society to begin reconciling the moral contradictions that the Enlightenment's universal precepts should have rendered self-evident regarding universal human dignity. But we must affirm now without qualification: Slavery was an unconscionable regime of brutality no matter what complexities followed. Upon this clear ethical line we can then examine the decisions leaders took that needlessly compounded injustice with further violence begetting more violence still. But the human atrocities began with forced servitude itself, not just the shots at Fort Sumter.
+
 The American Civil War represents one of the most striking failures of moral creativity and nonviolent conflict resolution in modern history. Rather than exhaust ethical alternatives to prevent the bloody conflict that claimed over 600,000 lives, political leaders on both sides of the Mason-Dixon line largely embraced an ill-conceived recourse to arms and hostile rhetoric, eschewing the harder work of principled diplomacy required in the tense moments before the first shots rang out.
 
 This watershed political and ethical disaster highlights the catastrophic consequences when those steering the ship of state fail to summon the courage, wisdom or skill to steer fractured factions towards common ground. The grave implications span economic, social and mortal tolls, etching a enduring scar across the geography and memory of a nation conceived in liberty.
@@ -54,7 +56,11 @@ This seminal historical case study illuminates timeless lessons on the need for 
 
 # Background
 
-The descent into the Civil War stemmed from a convoluted mixture of economic, political, social, and ideological tensions that had been simmering between Northern free states and Southern slaveholding states since the founding of the Republic. Arguments over trade policy, tax structures, and infrastructure investment reflected diverging economic models, as the North rapidly industrialized while the agrarian Southern economy remained dependent on slave labor for its predominant cotton and tobacco industries.
+While often portrayed as an inevitable clash between diametrically opposed Northern and Southern cultures, the reality on the road to disunion was far more nuanced. Economic arguments obscured complex partisan dynamics within both regions over trade impacts, while shared cultural practices still crossed sectional lines among elite classes. And the mapped Mason-Dixon line concealed pockets of both abolitionist and pro-slavery sympathies through border zones North and South complicating monolithic identities.
+
+Still, no equivocation can discount the core role of debates around slavery’s restriction or expansion in triggering the fatal breakdown, despite attempts by Lost Cause mythmakers to recast warring aims. Ultimately the South’s acute overreliance on bonded human chattel for its dominant cotton and tobacco industries informed the unwillingness of its ruling class to explore gradual reform of what the wider world increasingly deemed immoral. When accruing political pressures placed the abomination’s future in question, they fatefully refused peaceful change, exposing the rotten core their otherwise genteel pretensions had arisen from and could not withstand exposed.
+
+While economic, social and political factors all provided tinder for combustion, America’s still birth of a tragically aborted moral reckoning around slavery’s fundamentally indefensible cruelty sparked the final conflagration.
 
 These disputes over America's economic direction intertwined with acrimonious political debates, as the South insisted on continued Western expansion of slavery to shore up its economic viability and political influence.  Meanwhile, abolitionist voices and even moderate anti-slavery factions gained steam in the North, setting up explosive moral arguments across state houses and Congressional aisles.
 
@@ -74,9 +80,9 @@ Third, allowing secession would greatly damage the Northern industrial economy, 
 
 Fourth, permitting the Union's dissolution would weaken America on the 19th century world stage of imperial competition, threatening recently gained influence and prestige.
 
-Finally, the polarized climate following pre-war flashpoints like John Brown's abortive slave revolt convinced Northern leadership that the chasm between states on questions of slavery and economics had become unbridgeable through peaceful discourse alone.
+Finally, a polarized climate had long infected national leadership, with extremist violence plaguing debate from both abolitionists and pro-slavery factions. Destabilizing events like John Brown&rsquo;s abortive slave revolt and Preston Brooks&rsquo; brutal caning of Charles Sumner on the Senate floor reinforced militant stances. Years before succession, the South violently suppressed anti-slavery speech and settlement in Bleeding Kansas, displaying deep intolerance of peaceful dissent and change. With violence infecting the political process early on, faith faded that the widening differences between North and South could be bridged solely by peaceful compromise and discourse. Still, had cooler heads prevailed, the public brinkmanship need not have escalated into outright military confrontation. But the militant rhetoric proved too potent, blinding leadership on both sides to alternatives beyond deadly collision.
 
-Though simplistic in hindsight, this constellation of factors created the context for fatally short-sighted failure of creative alternatives beyond violent conflict.
+This constellation of factors created the context for fatally short-sighted failure of creative alternatives beyond violent conflict. 
 
 # The Cost
 
@@ -99,6 +105,14 @@ The American Civil War resulted in immense negative consequences that reverberat
 The failure of moral courage and creativity to resolve differences nonviolently compounded through decades of consequences eroding America's social fabric and people's faith in the system. The wounds thus inflicted haunt the body politic still.
 
 # Ethical Critique and Lessons
+
+Slavery in the antebellum South constituted one of history's worst extended atrocities. And no compromise with moral evil can stand. But there were still alternatives between passive acceptance vs pursuing the maximum violence of civil war.
+
+While a thoughtful anti-slavery coalition may have used economic levers, legal measures, and even principled militancy like raid disruption and slave escape assistance, the undiscerning bloodletting between structured armies and upon civilian populations could not efficiently force an ethical awakening. Only the slaveholders themselves could renounce the warped worldview at slavery's core when confronted with enough cultural and economic isolation.
+
+And history shows nonviolent mass movements tend to succeed best when they retain the moral high ground through courageous resistance over time versus decisive kinetic force in the short term. So had the North avoided conventional warfare while pursuing abolitionist empowerment, embargo and critique, the slave economy may have collapsed faster without engendering lingering resentments that feed continuing mythologies.
+
+In essence, we cannot fully separate means and ends. The choices made on the road to justice shape its character just as the systems we use shape outcomes. Not all violence prevents genocide equally. And while decisive action against grave oppression is mandatory, we must still weigh lasting impacts of coercion against transformation through ethics. The most sustainable change comes by awakening conscience, not crushing it.
 
 The North&rsquo;s turn to organized violence set a disastrous precedent where morality took a back seat to political expediency, unquestioned loyalties and obligation. Several acute failures stand out:
 
