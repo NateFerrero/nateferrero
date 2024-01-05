@@ -68,6 +68,7 @@ globalThis.MAIN = {
   <p>When writing, please introduce yourself and state your request in the first message</p>
   <h3>Social media</h3>
   <ul>
+  <li><a target="_blank" href="https://bsky.app/profile/nateferrero.bsky.social">BlueSky</a></li>
   <li><a target="_blank" href="https://www.codementor.io/@nateferrero">Codementor</a></li>
   <li><a target="_blank" href="https://www.facebook.com/nateferrero/">Facebook</a></li>
     <li><a target="_blank" href="https://github.com/NateFerrero">GitHub</a></li>
