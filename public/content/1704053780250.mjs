@@ -1,5 +1,6 @@
 export const published = true
 export const tags = [
+ 'AI',
  'Conversations with AI',
  'Ethics',
  'History',

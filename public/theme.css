@@ -257,6 +257,18 @@ body.sunrise {
 .content > *:last-child {
  margin-bottom: 0;
 }
+.content section {
+  background-color: #ffffff30;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem 0.5rem;
+  margin: 1rem 0;
+}
+.content section > p:first-child {
+  margin-top: 0;
+}
+.content section > p:last-child {
+  margin-bottom: 0;
+}
 sup {
  font-size: 65%;
  vertical-align: text-top;
