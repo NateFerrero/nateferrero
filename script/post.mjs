@@ -24,7 +24,7 @@ export const content = \`
 
 # Heading One
 
-**bold text** 
+**bold text**
 
 *italicized text*
 

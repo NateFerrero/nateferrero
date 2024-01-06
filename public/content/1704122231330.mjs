@@ -1,19 +1,11 @@
 export const published = false
 export const tags = []
 export const time = 1704122231330
-export const title = 'New post'
+export const title = 'Expansion'
 export const snippet = ''
 export const content = `
 
-# Heading One
-
-**bold text** 
-
-*italicized text*
-
-- First list item
-- Second list item
-
-[This links to GitHub](https://github.com)
+- Be an advocate for the faith, proving all things with patience and diligence.
+- Continue to follow the spirit when playing music. 
 
 `
