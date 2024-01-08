@@ -41,6 +41,22 @@ export const content = `
 
 # Unity Imposed by Force is not True Unity
 
+<section>
+
+## Notice
+
+This is an **evolving article** &mdash; meaning that as I recieve new perspective and feedback, I will update this article to reflect that feedback.
+
+The goal and intention is to be completely impartial to the **sides** in the Civil War, the North and South, Union and Confederacy, but highly partial to the idea that any path that leads to death is a path where creative options have been exhausted too quickly.
+
+Could death have been averted? Certainly. Does only one side bear the blame for the fact that death occurred? Absolutely not. Both sides are equally implicated in the back and forth that led to the outbreak of violence that is the American Civil War.
+
+With that said, I welcome your feedback so we can more clearly discern exactly what went wrong in this terrible stain on our nation's history.
+
+<p><a href="/#/contact">Contact Nate to suggest improvements to this article &rarr;</a></p>
+
+</section>
+
 We must acknowledge the grave moral failings in the decision to wage the Civil War despite appeals to preserving an &lsquo;undivided nation&rsquo;:
 
 Rather than meet the dissent calling for the righteous end of slavery with equal vision and valor, our nation's leadership resorted to brutality, betraying humanity itself; in the process, they ironically validated the Southern states' resistance through heavy-handed oppression, rather than rising to lead them toward justice through Lincoln's better angels of moral suasion and ethical inspiration that might have gently persuaded and uplifted all.
