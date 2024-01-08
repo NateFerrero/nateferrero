@@ -370,8 +370,8 @@ article ul {
 }
 article img {
  box-shadow: 0 0 1em #00000080;
- margin: 1em;
- max-width: calc(100% - 2em);
+ margin: 1em 0;
+ max-width: 100%;
 }
 article .copy {
  background-color: #ffffff20;
