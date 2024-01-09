@@ -383,3 +383,9 @@ article .copy {
  margin-top: 0.5em;
  padding: 0.5em;
 }
+article iframe {
+  border: none;
+  box-shadow: 0 0 1em #00000080;
+  margin: 1em 0;
+  width: 100%;
+}
