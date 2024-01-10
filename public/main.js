@@ -76,6 +76,7 @@ globalThis.MAIN = {
     <li><a target="_blank" href="https://www.instagram.com/nateferrero/">Instagram</a></li>
     <li><a target="_blank" href="https://www.linkedin.com/in/nateferrero/">LinkedIn</a></li>
     <li><a target="_blank" href="https://stackoverflow.com/users/1008429/nate-ferrero">Stack Overflow</a></li>
+    <li><a target="_blank" href="https://t.me/nateferrero">Telegram</a></li>
     <li><a target="_blank" href="https://twitter.com/NateFerrero">Twitter / X</a></li>
     <li><a target="_blank" href="https://www.youtube.com/NateFerrero">YouTube</a></li>
     </ul>
