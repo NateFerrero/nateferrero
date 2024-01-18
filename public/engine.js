@@ -32,13 +32,26 @@ const content = document.createElement('div')
 content.classList.add('content')
 container.appendChild(content)
 
-for (const section of Object.keys(globalThis.MAIN).sort()) {
- const link = document.createElement('a')
- link.setAttribute('href', `/#/${section.toLowerCase()}`)
- link.textContent = section
- sections.appendChild(link)
+async function renderNavigation() {
+ await new Promise((r) => {
+  const int = setInterval(function () {
+   if ('MAIN' in globalThis) {
+    clearInterval(int)
+    r()
+   }
+  }, 50)
+ })
+ for (const section of Object.keys(
+  globalThis.MAIN
+ ).sort()) {
+  const link = document.createElement('a')
+  link.setAttribute('href', `/#/${section.toLowerCase()}`)
+  link.textContent = section
+  sections.appendChild(link)
+ }
 }
 
+renderNavigation()
 addEventListener('hashchange', route)
 
 function route() {
