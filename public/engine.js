@@ -49,6 +49,7 @@ async function renderNavigation() {
   link.textContent = section
   sections.appendChild(link)
  }
+ route()
 }
 
 renderNavigation()
@@ -58,9 +59,7 @@ function route() {
  for (const link of Array.from(sections.children)) {
   if (link.tagName === 'A') {
    if (
-    `/${location.hash}`.startsWith(
-     link.getAttribute('href')
-    )
+    link.getAttribute('href').includes(`/${location.hash}`)
    ) {
     link.classList.add('current')
    } else {
@@ -104,5 +103,3 @@ function route() {
  }
  container.scrollTo({ behavior: 'smooth', top: 0 })
 }
-
-route()
