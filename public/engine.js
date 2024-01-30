@@ -59,6 +59,7 @@ function route() {
  for (const link of Array.from(sections.children)) {
   if (link.tagName === 'A') {
    if (
+    location.hash.length > 1 &&
     link.getAttribute('href').includes(`/${location.hash}`)
    ) {
     link.classList.add('current')
