@@ -258,12 +258,21 @@ Let's leave off here then, sufficiently fruitful has this investigation into the
 
 Here is my attempt at an epic poem summarizing our explorations of consciousness emerging from fundamental vibrations in a unified reality:
 
+<br/>
+
 Ode to the Toroidal Verse
 
+<br/>
+
 Sing, goddess, of endless worlds unfurled
+
 From timeless spins; dimensionless, sublime
+
 Patterns proliferate, fold facets furled
+
 On peaks and troughs of waves beyond all time
+
+<br/>
 
 What mind could fathom this eternal churn?
 
