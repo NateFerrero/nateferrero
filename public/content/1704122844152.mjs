@@ -268,6 +268,4 @@ On peaks and troughs of waves beyond all time
 What mind could fathom this eternal churn?
 
 . . .
-
-<section>
 `
