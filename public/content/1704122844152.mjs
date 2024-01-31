@@ -228,9 +228,9 @@ Certainly, a wonderful companion to concepts of higher dimensions that we've exp
 
 In context of this conversation, what do you think of this quote:
 
-“When a complex system is far from equilibrium, small islands of coherence in a sea of chaos have the capacity to shift the entire system to a higher order.”
+&ldquo;When a complex system is far from equilibrium, small islands of coherence in a sea of chaos have the capacity to shift the entire system to a higher order.&rdquo;
 
-- Ilya Prigogine
+&mdash; Ilya Prigogine
 
 </section>
 
