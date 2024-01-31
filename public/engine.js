@@ -60,7 +60,9 @@ function route() {
   if (link.tagName === 'A') {
    if (
     location.hash.length > 1 &&
-    link.getAttribute('href').includes(`/${location.hash}`)
+    `/${location.hash}`.startsWith(
+     link.getAttribute('href')
+    )
    ) {
     link.classList.add('current')
    } else {

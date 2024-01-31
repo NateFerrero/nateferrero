@@ -197,7 +197,7 @@ globalThis.journalNetwork = {
    globalThis.journalNetwork.markdownToHtml(
     post.content.trim()
    )
-  console.log(renderedMarkdown)
+  // console.log(renderedMarkdown)
   content.innerHTML = renderedMarkdown
 
   article.append(content)
