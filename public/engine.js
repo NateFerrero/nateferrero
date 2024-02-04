@@ -87,7 +87,14 @@ function route() {
    case '#/':
     backToHome.classList.remove('visible')
     content.innerHTML = `
-     <p class="info-text">Website built with assistance from with https://claude.ai and https://chat.openai.com</p>
+    <h4>🧭 AGENDA 2024</h4>
+
+    <p>➡️ <a href="https://tagme.in/#/IntegralPolitics" target="_blank">Integral Politics</a></p>
+    <p>➡️ <a href="https://tagme.in/#/LTSTDO" target="_blank">Liberation Through Submission To Divine Order</a></p>
+    <p>➡️ <a href="https://tagme.in/#/life-support%3A" target="_blank">Life Support</a></p>
+    <p>➡️ <a href="https://tagme.in/#/WorldChangingIdeas" target="_blank">World Changing Ideas</a></p>
+    
+    <p class="info-text">Website built with assistance from with https://claude.ai and https://chat.openai.com</p>
      `
     break
    case '#/coaching':

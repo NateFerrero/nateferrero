@@ -94,7 +94,7 @@ globalThis.MAIN = {
     <li><a target="_blank" href="https://crown-lang.org/">Crown</a> - a programming metalanguage optimized for ease of use and ability to communicate verbally, implemented in JavaScript</li>
     <li><a target="_blank" href="https://journal.network/">Journal Network</a> - a slow text-only social network</li>
     <li><a target="_blank" href="https://listmanager.dev/">List Manager</a> - an information organizer</li>
-    <li><a target="_blank" href="https://tagme.in/">TagMeIn</a> - a social network for software developers</li>
+    <li><a target="_blank" href="https://tagme.in/">TagMeIn</a> - a micro social network</li>
     <li><a target="_blank" href="https://realisticabundance.com/">Realistic Abundance</a> - a conceptual framework for invoking global prosperity</li>
    </ul>
    <p>See <a href="https://github.com/tagmein/">TagMeIn on GitHub</a> for more projects.</p>
