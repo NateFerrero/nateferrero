@@ -94,8 +94,9 @@ function route() {
     <p>➡️ <a href="https://tagme.in/#/life-support%3A" target="_blank">Life Support</a></p>
     <p>➡️ <a href="https://tagme.in/#/WorldChangingIdeas" target="_blank">World Changing Ideas</a></p>
 
-    <iframe src="https://landingatzion.substack.com/embed" width="480" height="480" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-    
+    <h2>Subscribe to my writing</h2>
+    <iframe src="https://landingatzion.substack.com/embed" width="100%" height="480" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+
     <p class="info-text">Website built with assistance from with https://claude.ai and https://chat.openai.com</p>
      `
     break
