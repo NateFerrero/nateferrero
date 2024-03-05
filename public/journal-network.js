@@ -23,9 +23,7 @@ globalThis.journalNetwork = {
   }
   async function loadPublished() {
    try {
-    const publishedResponse = await fetch(
-     '/published.json?t=' + Date.now()
-    )
+    const publishedResponse = await fetch('/published.json')
     const published = await publishedResponse.json()
     cache.published.push(...published.sort(sortByTime))
     for (const post of published) {
