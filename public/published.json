@@ -106,7 +106,10 @@
   "image": "/resources/covers/no-bad-people.png",
   "published": true,
   "snippet": "A story from Burning Man, where I meet a fellow spiritual seeker on the path.",
-  "tags": [],
+  "tags": [
+   "Spirituality",
+   "True stories"
+  ],
   "time": 1709667382760,
   "title": "There are no bad people",
   "id": 1704122844518

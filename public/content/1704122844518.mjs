@@ -1,5 +1,5 @@
 export const published = true
-export const tags = []
+export const tags = ['Spirituality', 'True stories']
 export const time = 1709667382760
 export const title = 'There are no bad people'
 export const snippet =
