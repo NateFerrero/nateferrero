@@ -441,3 +441,6 @@ article iframe {
  margin: 1em 0;
  width: 100%;
 }
+.content > details > summary {
+ margin: 0.5em 0;
+}
