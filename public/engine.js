@@ -96,11 +96,11 @@ function route() {
 
     <h2>Subscribe to my writing</h2>
     <details>
-     <summary><p>Technology and software</p></summary>
+     <summary>Technology and software</summary>
      <iframe src="https://toolsofthetechnium.substack.com/embed" width="100%" height="480" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
     </details>
     <details>
-     <summary><p>Spirituality and religion</p></summary>
+     <summary>Spirituality and religion</summary>
     <iframe src="https://landingatzion.substack.com/embed" width="100%" height="480" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
     </details>
     <p class="info-text">Website built with assistance from with https://claude.ai and https://chat.openai.com</p>
