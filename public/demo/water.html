@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<head>
+ <title>Water - Nate Ferrero</title>
+</head>
+<body>
+ <script>
+  function canvas(render) {
+   const c = document.createElement('canvas')
+   document.body.appendChild(c)
+   const layer = c.getContext('2d')
+   Object.assign(c.style, {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    height: '100vh',
+    width: '100vw',
+   })
+   function resize() {
+    const height = Math.floor(innerHeight)
+    const width = Math.floor(innerWidth)
+    Object.assign(c, {
+     height,
+     width,
+    })
+    render(width, height, layer, c)
+   }
+   addEventListener('resize', resize)
+   resize()
+  }
+ </script>
+ <script>
+  let renderTimeout
+  const FPS = 8
+  let time = 0
+  const waveCount = 48
+  canvas(function (w, h, layer, image) {
+   /**
+    * Sky
+    */
+   const skyHeight = Math.round((2 / 3) * h)
+   function drawSky() {
+    layer.globalCompositeOperation = 'source-over'
+    layer.globalAlpha = 1
+    for (let i = 0; i < skyHeight; i++) {
+     const x = Math.round(16 + (64 * i) / skyHeight)
+     const r = Math.round(16 + (96 * i) / skyHeight)
+     layer.fillStyle = `rgb(${x},${x},${x})`
+     layer.fillRect(0, i, w, 1)
+    }
+   }
+   /**
+    * Stars
+    */
+   function rc() {
+    return [
+     'ff',
+     'f0',
+     'e0',
+     'd0',
+    ][Math.floor(4 * Math.random())]
+   }
+   const starMap = []
+   for (let i = 0; i < 300; i++) {
+    const size =
+     12 * Math.random() * Math.random() * Math.random() + 1
+    const x = 2 * Math.random() * w - size / 2 - w / 2
+    const y =
+     2 * Math.random() * skyHeight -
+     size / 2 -
+     skyHeight / 2
+    starMap.push({
+     size,
+     i,
+     x,
+     y,
+     color: `#${rc()}${rc()}${rc()}80`,
+    })
+   }
+   function drawStars() {
+    layer.globalCompositeOperation = 'source-over'
+    layer.globalAlpha = 1
+    for (const star of starMap) {
+     const { color, size, x: _x, y: _y } = star
+     let s = size
+     const x = (_x + time / 3) % w
+     const y = (_y + time / 3) % skyHeight
+     layer.fillStyle = color
+     while (s-- > 0) {
+      layer.translate(x, y)
+      layer.rotate((45 * Math.PI) / 180)
+      layer.translate(-x, -y)
+      layer.fillRect(x - s / 2, y - s / 2, s, s)
+     }
+     layer.setTransform(1, 0, 0, 1, 0, 0)
+    }
+   }
+   drawSky()
+   drawStars()
+   /**
+    * Initial water
+    */
+   const waveSize = 4
+   const waterHeight = h - skyHeight
+   function wave(waveId) {
+    const srcY = Math.min(
+     skyHeight - waveSize - 1,
+     skyHeight -
+      skyHeight *
+       Math.sin(
+        ((Math.PI / 4) * waveId) / waveCount +
+         Math.sin(
+          ((Math.PI * time) / 8) * Math.sin(waveId / 384)
+         ) /
+          48
+       )
+    )
+    const destY =
+     skyHeight +
+     (waterHeight * waveId) / waveCount -
+     waveSize * 2
+    layer.drawImage(
+     image, // source
+     0, // source x
+     srcY, // source y
+     w, // src w
+     waveSize, // src h,
+     0, // dest x
+     destY, // dest y
+     w, // dest w
+     waveSize * 32 // dest h
+    )
+   }
+   for (let q = 0; q < waveCount; q++) {
+    wave(q)
+   }
+   function draw() {
+    drawSky()
+    drawStars()
+    /**
+     * Water
+     */
+    layer.globalCompositeOperation = 'source-over'
+    layer.globalAlpha = 0.75
+    for (let q = 0; q < waveCount; q++) {
+     wave(q)
+    }
+    layer.globalCompositeOperation = 'multiply'
+    layer.fillStyle = '#00000040'
+    layer.fillRect(
+     0,
+     skyHeight - 1 * waveSize,
+     w,
+     waterHeight
+    )
+   }
+   /**
+    * Animate
+    */
+   function update() {
+    clearTimeout(renderTimeout)
+    time++
+    draw()
+    renderTimeout = requestAnimationFrame(function () {
+     setTimeout(update, 1e3 / FPS)
+    })
+   }
+   update()
+  })
+ </script>
+</body>
