@@ -160,8 +160,8 @@
     clearTimeout(renderTimeout)
     time++
     draw()
-    renderTimeout = requestAnimationFrame(function () {
-     setTimeout(update, 1e3 / FPS)
+    requestAnimationFrame(function () {
+     renderTimeout = setTimeout(update, 1e3 / FPS)
     })
    }
    update()
