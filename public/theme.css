@@ -442,5 +442,6 @@ article iframe {
  width: 100%;
 }
 .content > details > summary {
+ cursor: pointer;
  margin: 0.5em 0;
 }
