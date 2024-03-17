@@ -445,3 +445,6 @@ article iframe {
  cursor: pointer;
  margin: 0.5em 0;
 }
+.content > details > iframe {
+ border-radius: 8px;
+}
