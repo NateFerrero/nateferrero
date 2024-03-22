@@ -87,14 +87,9 @@ function route() {
    case '#/':
     backToHome.classList.remove('visible')
     content.innerHTML = `
-    <h4>🧭 AGENDA 2024</h4>
-
-    <p>➡️ <a href="https://tagme.in/#/IntegralPolitics" target="_blank">Integral Politics</a></p>
-    <p>➡️ <a href="https://tagme.in/#/LTSTDO" target="_blank">Liberation Through Submission To Divine Order</a></p>
-    <p>➡️ <a href="https://tagme.in/#/life-support%3A" target="_blank">Life Support</a></p>
-    <p>➡️ <a href="https://tagme.in/#/WorldChangingIdeas" target="_blank">World Changing Ideas</a></p>
-
-    <h2>Subscribe to my writing</h2>
+    <h3>Software engineer</h3>
+    <p>Currently building Tag Me In, a social network with channels, an example channel is <a href="https://tagme.in/#/WorldChangingIdeas" target="_blank">#World Changing Ideas</a>.</p>
+    <h4>Subscribe to my writing</h4>
     <details>
      <summary>Technology and software</summary>
      <iframe src="https://toolsofthetechnium.substack.com/embed" width="100%" height="480" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
