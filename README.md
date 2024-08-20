@@ -1,5 +1,5 @@
 # Nathanael Ferrero
 
-Engineer, spiritualist, naturalist, human being, animal
+Animal, engineer, visionary
 
 Visit my personal site at https://nateferrero.com
