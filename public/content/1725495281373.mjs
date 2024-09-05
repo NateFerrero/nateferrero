@@ -185,7 +185,7 @@ In a world where everyone strives to shape their fate, there must be room for th
 
 <samp>Nate</samp>
 You heard it here first, folks! AI has the potential to responsibly assist in the awakening of higher-order human consciousness, if used in appropriate partnership.
-
+</section>
 <section>
 <samp>ChatGPT</samp>
 Absolutely. AI, when used thoughtfully, can be a powerful tool for fostering higher-order human consciousness. By augmenting our cognitive capacities, assisting in self-reflection, and providing access to knowledge, AI can help individuals engage more deeply with their own lives, make more intentional choices, and understand their interconnectedness with others and the world. 

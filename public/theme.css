@@ -261,8 +261,9 @@ body.sunrise {
 .content section {
  background-color: #ffffff30;
  border-radius: 1rem;
- padding: 0.75rem 0.75rem 0.5rem;
- margin: 1rem -0.75rem;
+ padding: 0.25rem 0.75rem 0.5rem;
+ margin: 1rem -0.75rem 1rem 5rem;
+ position: relative;
 }
 .content section > p:first-child {
  margin-top: 0;
@@ -274,11 +275,14 @@ body.sunrise {
  background-color: #ffffff90;
  border-radius: 0.25rem;
  color: #203c5cd0;
- display: inline-block;
+ display: block;
  font-family: inherit;
  font-size: inherit;
  font-weight: bold;
- padding: 0.25rem 0.5rem;
+ padding: 0.35rem 0.5rem 0.25rem 0.5rem;
+ position: absolute;
+ right:  100%;
+ top: 6px;
 }
 sup {
  font-size: 65%;
