@@ -9,10 +9,9 @@ export const time = 1725495281373
 export const title =
  'Identifying The Burden and Blessings of Affluence'
 export const snippet = 'A conversation with ChatGPT.'
-export const image =
- '/resources/covers/discerning-transcendence.png'
+export const image = '/resources/covers/fatepainting.png'
 export const content = `
-<img src="/resources/covers/discerning-transcendence.png" />
+<img src="/resources/covers/fatepainting.png" />
 <section>
 
 <samp>Nate</samp>
