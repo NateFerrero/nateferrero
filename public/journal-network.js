@@ -193,6 +193,60 @@ globalThis.journalNetwork = {
 
   return article
  },
+ progressiveReveal(container) {
+  const elements = []
+  let element
+  while ((element = container.firstElementChild)) {
+   elements.push(element)
+   container.removeChild(element)
+  }
+  // now we have elements array
+  let index = elements.length
+  const revealButton = document.createElement('button')
+  Object.assign(revealButton.style, {
+   display: 'block',
+   fontSize: '120%',
+   margin: '1rem auto',
+  })
+  function reveal() {
+   if (index >= elements.length - 1) {
+    container.innerHTML = ''
+    revealButton.textContent = 'Begin'
+    container.appendChild(revealButton)
+    index = 0
+    revealButton.focus()
+    return
+   }
+   if (index === 0) {
+    revealButton.textContent = 'Next'
+   }
+   index++
+   const element = elements[index]
+   if (element) {
+    Object.assign(element.style, {
+     transition: '0.5s opacity ease',
+     opacity: '0',
+    })
+    container.appendChild(element)
+    container.appendChild(revealButton)
+    setTimeout(() => {
+     Object.assign(element.style, {
+      opacity: '1',
+     })
+     revealButton.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+     })
+    })
+   }
+   if (index === elements.length - 1) {
+    revealButton.textContent = 'Start over'
+   }
+   revealButton.focus()
+  }
+  revealButton.addEventListener('click', reveal)
+  reveal()
+ },
  renderPost(post) {
   const article =
    globalThis.journalNetwork.renderPostHead(post)
@@ -206,6 +260,8 @@ globalThis.journalNetwork = {
   content.innerHTML = renderedMarkdown
 
   article.append(content)
+
+  globalThis.journalNetwork.progressiveReveal(content)
 
   return article
  },
