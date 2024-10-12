@@ -137,13 +137,18 @@ function call(...args) {
 }
 
 function program() {
+ function PRINT(text) {
+  trace &&
+   console.log(clock0, clock1, clock2, '[PRINT]', text)
+  const log = open(text)
+  set(log, (x) => console.log(x))
+  call(log, text)
+  free(log)
+ }
  const message = open()
- const log = open()
  set(message, 'hello world')
- set(log, (x) => console.log(x))
- call(log, message)
+ PRINT(message)
  free(message)
- free(log)
 }
 
 program()
