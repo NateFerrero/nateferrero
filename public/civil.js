@@ -1,11 +1,13 @@
-const trace = 0
+const trace = 1
 
 let clock0 = 0
 let clock1 = 0
 let clock2 = 0
 
+const Free = Symbol()
 const From = Symbol()
 const Last = Symbol()
+const Next = Symbol()
 const Registers = Symbol()
 const Result = Symbol()
 const Time = Symbol()
@@ -17,6 +19,7 @@ let level0 = new Map(),
 root.set(clock0, level0)
 level0.set(clock1, level1)
 level1.set(clock2, level2)
+level2.set(Next, 0)
 
 const CLOCK_MAX = Number.MAX_SAFE_INTEGER
 
@@ -64,6 +67,41 @@ function tick() {
  level2.set(Last, last)
  level2.set(From, prev)
  level2.set(Registers, new Map())
+ level2.set(Next, prev.has(Next) ? prev.get(Next) : 0)
+ if (prev.has(Free)) {
+  level2.set(Free, prev.get(Free).slice())
+ }
+}
+
+function open() {
+ if (level2.has(Free)) {
+  const f = level2.get(Free)
+  if (f.length > 0) {
+   const next = f.shift()
+   if (f.length === 0) {
+    level2.delete(Free)
+   }
+   trace &&
+    console.log(clock0, clock1, clock2, '[open]', next)
+   return next
+  }
+  level2.delete(Free)
+ }
+ const next = level2.get(Next)
+ level2.set(Next, next + 1)
+ trace &&
+  console.log(clock0, clock1, clock2, '[open]', next)
+ return next
+}
+
+function free(r) {
+ if (level2.has(Free)) {
+  const f = level2.get(Free)
+  f.push(r)
+ } else {
+  level2.set(Free, [r])
+ }
+ trace && console.log(clock0, clock1, clock2, '[free]', r)
 }
 
 function set(register, value) {
@@ -99,9 +137,13 @@ function call(...args) {
 }
 
 function program() {
- set(0, 'hello world')
- set(1, (x) => console.log(x))
- call(1, 0)
+ const message = open()
+ const log = open()
+ set(message, 'hello world')
+ set(log, (x) => console.log(x))
+ call(log, message)
+ free(message)
+ free(log)
 }
 
 program()
