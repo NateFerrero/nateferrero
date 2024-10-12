@@ -136,20 +136,26 @@ function call(...args) {
   )
 }
 
+function use(cb) {
+ const ref = open()
+ cb(ref)
+ free(ref)
+}
+
 function PRINT(text) {
  trace &&
   console.log(clock0, clock1, clock2, '[PRINT]', text)
- const log = open()
- set(log, (x) => console.log(x))
- call(log, text)
- free(log)
+ use((log) => {
+  set(log, (x) => console.log(x))
+  call(log, text)
+ })
 }
 
 function program() {
- const message = open()
- set(message, 'hello world')
- PRINT(message)
- free(message)
+ use((message) => {
+  set(message, 'hello world')
+  PRINT(message)
+ })
 }
 
 program()
