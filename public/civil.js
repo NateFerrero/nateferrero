@@ -136,15 +136,16 @@ function call(...args) {
   )
 }
 
+function PRINT(text) {
+ trace &&
+  console.log(clock0, clock1, clock2, '[PRINT]', text)
+ const log = open()
+ set(log, (x) => console.log(x))
+ call(log, text)
+ free(log)
+}
+
 function program() {
- function PRINT(text) {
-  trace &&
-   console.log(clock0, clock1, clock2, '[PRINT]', text)
-  const log = open()
-  set(log, (x) => console.log(x))
-  call(log, text)
-  free(log)
- }
  const message = open()
  set(message, 'hello world')
  PRINT(message)
