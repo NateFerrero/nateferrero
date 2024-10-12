@@ -17,18 +17,14 @@ function call(e, ...args) {
  )
  const result = realCall(...realArgs)
  e.level2.set(Result, result)
- trace &&
-  console.log(
-   e.clock0,
-   e.clock1,
-   e.clock2,
-   '[call]',
-   String(result)
-  )
+ trace && e.log('call', String(result))
 }
+
+let engineId = 0
 
 function engine() {
  const e = {
+  id: engineId++,
   clock0: 0,
   clock1: 0,
   clock2: 0,
@@ -36,6 +32,12 @@ function engine() {
   level0: new Map(),
   level1: new Map(),
   level2: new Map(),
+  log(...x) {
+   console.log(
+    `[${e.id} @ ${e.clock0}:${e.clock1}:${e.clock2}]`,
+    ...x
+   )
+  },
  }
  e.root.set(e.clock0, e.level0)
  e.level0.set(e.clock1, e.level1)
@@ -51,8 +53,7 @@ function free(e, r) {
  } else {
   e.level2.set(Free, [r])
  }
- trace &&
-  console.log(e.clock0, e.clock1, e.clock2, '[free]', r)
+ trace && e.log('free', r)
 }
 
 function open(e) {
@@ -63,22 +64,14 @@ function open(e) {
    if (f.length === 0) {
     e.level2.delete(Free)
    }
-   trace &&
-    console.log(
-     e.clock0,
-     e.clock1,
-     e.clock2,
-     '[open]',
-     next
-    )
+   trace && e.log('open', next)
    return next
   }
   e.level2.delete(Free)
  }
  const next = e.level2.get(Next)
  e.level2.set(Next, next + 1)
- trace &&
-  console.log(e.clock0, e.clock1, e.clock2, '[open]', next)
+ trace && e.log('open', next)
  return next
 }
 
@@ -99,15 +92,7 @@ function set(e, register, value) {
  tick(e)
  const registers = e.level2.get(Registers)
  registers.set(register, value)
- trace &&
-  console.log(
-   e.clock0,
-   e.clock1,
-   e.clock2,
-   '[set]',
-   register,
-   String(value)
-  )
+ trace && e.log('set', register, String(value))
 }
 
 function tick(e) {
@@ -136,7 +121,7 @@ function tick(e) {
  e.level2 = new Map()
  e.level1.set(e.clock2, e.level2)
  const time = [e.clock0, e.clock1, e.clock2]
- trace && console.log(...time, '[tick]', '<<', ...last)
+ trace && e.log('tick', ...last)
  e.level2.set(Time, time)
  e.level2.set(Last, last)
  e.level2.set(From, prev)
@@ -155,9 +140,8 @@ function use(e, cb) {
 
 //////////////////////
 
-function PRINT(e, text) {
- trace &&
-  console.log(e.clock0, e.clock1, e.clock2, '[PRINT]', text)
+function _print(e, text) {
+ trace && e.log('_print', text)
  use(e, (log) => {
   set(e, log, (x) => console.log(x))
   call(e, log, text)
@@ -167,7 +151,7 @@ function PRINT(e, text) {
 function program(e) {
  use(e, (message) => {
   set(e, message, 'hello world')
-  PRINT(e, message)
+  _print(e, message)
  })
 }
 
