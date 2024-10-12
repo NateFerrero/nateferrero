@@ -1,3 +1,7 @@
+/**
+ * Civil Engine
+ * @author Nate Ferrero
+ */
 const trace = 1
 
 const Free = Symbol()
@@ -10,6 +14,8 @@ const Time = Symbol()
 
 const CLOCK_MAX = Number.MAX_SAFE_INTEGER
 
+let engineId = 0
+
 function call(e, ...args) {
  tick(e)
  const [realCall, ...realArgs] = args.map((r) =>
@@ -19,8 +25,6 @@ function call(e, ...args) {
  e.level2.set(Result, result)
  trace && e.log('call', String(result))
 }
-
-let engineId = 0
 
 function engine() {
  const e = {
@@ -136,6 +140,22 @@ function use(e, cb) {
  const ref = open(e)
  cb(ref, e)
  free(e, ref)
+}
+
+//////////////////////
+
+const civil = {
+ call,
+ get civil() {
+  return civil
+ },
+ engine,
+ free,
+ open,
+ seek,
+ set,
+ tick,
+ use,
 }
 
 //////////////////////
