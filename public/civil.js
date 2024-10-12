@@ -140,7 +140,7 @@ function program() {
  function PRINT(text) {
   trace &&
    console.log(clock0, clock1, clock2, '[PRINT]', text)
-  const log = open(text)
+  const log = open()
   set(log, (x) => console.log(x))
   call(log, text)
   free(log)
