@@ -208,7 +208,7 @@ globalThis.journalNetwork = {
    fontSize: '120%',
    margin: '1rem auto',
   })
-  function reveal() {
+  async function reveal() {
    if (index >= elements.length - 1) {
     container.innerHTML = ''
     revealButton.textContent = 'Begin'
@@ -240,7 +240,15 @@ globalThis.journalNetwork = {
     })
    }
    if (index === elements.length - 1) {
+    revealButton.setAttribute('disabled', 'disabled')
+    revealButton.textContent = 'Start over [3..]'
+    await new Promise((r) => setTimeout(r, 1500))
+    revealButton.textContent = 'Start over [.2.]'
+    await new Promise((r) => setTimeout(r, 1500))
+    revealButton.textContent = 'Start over [..1]'
+    await new Promise((r) => setTimeout(r, 1500))
     revealButton.textContent = 'Start over'
+    revealButton.removeAttribute('disabled')
    }
    revealButton.focus()
   }
