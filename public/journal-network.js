@@ -294,7 +294,7 @@ globalThis.journalNetwork = {
 
   article.append(content)
 
-  globalThis.journalNetwork.progressiveReveal(content)
+  // globalThis.journalNetwork.progressiveReveal(content)
 
   return article
  },
