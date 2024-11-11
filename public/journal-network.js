@@ -218,25 +218,25 @@ globalThis.journalNetwork = {
     return
    }
    if (index === 0) {
-    revealButton.textContent = 'Next'
+    revealButton.textContent = 'Continue...'
    }
-   index++
    const element = elements[index]
+   index++
    if (element) {
     Object.assign(element.style, {
      transition: '0.5s opacity ease',
      opacity: '0',
     })
+    const scrollTopNow = document.body.scrollTop
     container.appendChild(element)
-    container.appendChild(revealButton)
+    document.body.scrollTop = scrollTopNow
     setTimeout(() => {
      Object.assign(element.style, {
       opacity: '1',
      })
-     revealButton.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-     })
+     const scrollTopNow2 = document.body.scrollTop
+     container.appendChild(revealButton)
+     document.body.scrollTop = scrollTopNow2
     })
    }
    if (index === elements.length - 1) {
@@ -252,8 +252,33 @@ globalThis.journalNetwork = {
    }
    revealButton.focus()
   }
-  revealButton.addEventListener('click', reveal)
-  reveal()
+  function begin() {
+   reveal()
+   reveal()
+   reveal()
+   setTimeout(() => {
+    reveal()
+    reveal()
+    reveal()
+    document.body.scrollTo(0, 0)
+   }, 250)
+  }
+  revealButton.addEventListener('click', () => {
+   if (index === elements.length - 1) {
+    begin()
+    return
+   }
+   reveal()
+   if (index === elements.length - 1) {
+    return
+   }
+   reveal()
+   if (index === elements.length - 1) {
+    return
+   }
+   reveal()
+  })
+  begin()
  },
  renderPost(post) {
   const article =
