@@ -10,6 +10,18 @@ body.sunrise {
   #b9a497
  );
 }
+body.daylight {
+ background: linear-gradient(
+  to bottom,
+  #00a2ff,
+  #0d9eff,
+  #1a9cff,
+  #3b97ff,
+  #5a9fff,
+  #799aff,
+  #ffc49d
+ );
+}
 .star {
  position: absolute;
  top: 0;
@@ -20,6 +32,7 @@ body.sunrise {
  border-radius: 50%;
  /* Glow */
  box-shadow: 0 0 3px white, 0 0 5px white;
+ opacity: 0.25;
 }
 .meteors > div {
  background: white;
@@ -119,6 +132,18 @@ body.sunrise {
  width: 0;
  transform: translateY(-0.5vh);
 }
+.sun {
+ position: absolute;
+ width: 10vh;
+ height: 10vh;
+ border-radius: 50%;
+ box-shadow: 0 0 2vh #ffff00d0;
+ background-color: #ffffd0;
+ transform: rotate(-30deg);
+ overflow: hidden;
+ z-index: 1;
+ opacity: 1;
+}
 .moon {
  position: absolute;
  width: 10vh;
@@ -129,6 +154,7 @@ body.sunrise {
  transform: rotate(-30deg);
  overflow: hidden;
  z-index: 1;
+ opacity: 0.25;
 }
 .moon::before,
 .moon::after {
@@ -164,11 +190,11 @@ body.sunrise {
  z-index: 1;
 }
 .engine-container {
- background-color: #0e243ed0;
+ /* background-color: #0e243ed0; */
  border-radius: 1.5vh;
  box-shadow: 0 0 10vh #00000080;
  box-sizing: border-box;
- color: #ffffffd0;
+ color: #000040d0;
  min-height: 100%;
  position: relative;
  text-align: center;
@@ -233,7 +259,7 @@ body.sunrise {
  line-height: 1.65;
  opacity: 1;
  overflow: hidden;
- padding: 0 1.5rem 1.5rem;
+ padding: 0 1.5rem 5rem;
  text-align: left;
  transition: opacity 1.5s ease;
  width: 100%;
