@@ -237,7 +237,7 @@ body.daylight {
 }
 .engine-sections > a:focus {
  text-shadow: 0 0 5px #000000, 0 0 5px #000000,
- 0 0 5px #000000, 0 0 5px #000000;
+  0 0 5px #000000, 0 0 5px #000000;
 }
 *::selection {
  background-color: #00000080;
@@ -259,10 +259,12 @@ body.daylight {
  line-height: 1.65;
  opacity: 1;
  overflow: hidden;
- padding: 0 1.5rem 5rem;
+ padding: 1rem 2.5rem 6rem;
  text-align: left;
  transition: opacity 1.5s ease;
  width: 100%;
+ margin: 0 auto;
+ max-width: 960px;
 }
 .content:empty {
  opacity: 0;
@@ -305,7 +307,7 @@ body.daylight {
  font-weight: bold;
  padding: 0.35rem 0.5rem 0.25rem 0.5rem;
  position: absolute;
- right:  100%;
+ right: 100%;
  top: 6px;
  margin-right: 6px;
 }
@@ -363,7 +365,7 @@ a.play-stars:hover {
  opacity: 1;
 }
 a.back-to-home {
-  align-items: center;
+ align-items: center;
  background-color: #002f4b80;
  box-sizing: border-box;
  color: #ffffff;
@@ -422,7 +424,7 @@ article h1 {
 }
 a:focus {
  text-shadow: 0 0 5px #000000, 0 0 5px #000000,
- 0 0 5px #000000, 0 0 5px #000000;
+  0 0 5px #000000, 0 0 5px #000000;
 }
 article .tags {
  margin-bottom: 0.25rem;
