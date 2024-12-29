@@ -23,7 +23,7 @@ body.daylight {
  );
 }
 .star {
- position: absolute;
+ position: fixed;
  top: 0;
  left: 0;
  width: 2px;
@@ -49,7 +49,7 @@ body.daylight {
 .meteors > div::after {
  content: '';
  /* Position next to meteor */
- position: absolute;
+ position: fixed;
  right: 0;
  bottom: 0;
  width: 120px;
@@ -68,7 +68,7 @@ body.daylight {
  border-bottom: 1vh solid #000;
  height: 2vh;
  left: 0;
- position: absolute;
+ position: fixed;
  right: 0;
  background: linear-gradient(
   to bottom,
@@ -133,7 +133,7 @@ body.daylight {
  transform: translateY(-0.5vh);
 }
 .sun {
- position: absolute;
+ position: fixed;
  width: 10vh;
  height: 10vh;
  border-radius: 50%;
@@ -145,7 +145,7 @@ body.daylight {
  opacity: 1;
 }
 .moon {
- position: absolute;
+ position: fixed;
  width: 10vh;
  height: 10vh;
  border-radius: 50%;
@@ -437,9 +437,11 @@ article .tags a {
  background-color: #ffffff80;
  border-radius: 4px;
  color: #102134a0;
+ display: inline-block;
  font-size: 14px;
- margin-right: 6px;
+ margin: 6px;
  padding: 4px 6px;
+ white-space: nowrap;
 }
 article .snippet {
  margin: 0.25rem 0 0;
@@ -484,4 +486,24 @@ article iframe {
 }
 .content > details > iframe {
  border-radius: 8px;
+}
+@media print {
+ a.play-music,
+ a.play-stars,
+ button.copy,
+ .horizon,
+ .sun,
+ .moon,
+ .moon-shade,
+ .star,
+ .meteors {
+  display: none !important;
+ }
+ .content a {
+  border-bottom: none;
+ }
+ body,
+ html {
+  overflow: auto !important;
+ }
 }
